@@ -6,8 +6,8 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 | Category |      Name                            |                       Link                                          | solved | Notes |
 |----------|:------------------------------------:|--------------------------------------------------------------------:|:------:|:-----:|
 | Arrays   | Two Sum x                            | https://leetcode.com/problems/two-sum/                              |   yes  |       |
-| Arrays   | Best Time to Buy and Sell Stock x    | https://leetcode.com/problems/best-time-to-buy-and-sell-stock/      |   no   |       |
-| Arrays   | Contains Duplicate x                 | https://leetcode.com/problems/contains-duplicate/                   |   no   |       |
+| Arrays   | Best Time to Buy and Sell Stock x    | https://leetcode.com/problems/best-time-to-buy-and-sell-stock/      |   yes  |       |
+| Arrays   | Contains Duplicate x                 | https://leetcode.com/problems/contains-duplicate/                   |   yes  |       |
 | Arrays   | Product of Array Except Self         | https://leetcode.com/problems/product-of-array-except-self/         |   no   |       |
 | Arrays   | Maximum Subarray                     | https://leetcode.com/problems/maximum-subarray/                     |   no   |       |
 | Arrays   | Maximum Product Subarray             | https://leetcode.com/problems/maximum-product-subarray/             |   no   |       |
