@@ -45,17 +45,17 @@
         var series = [];
         const dates = [
           "jan",
-          "feb",
-          "mar",
-          "apr",
-          "may",
-          "jun",
-          "jul",
-          "aug",
-          "sep",
-          "oct",
-          "nov",
-          "dec",
+          "Feb",
+          "Mar",
+          "Apr",
+          "May",
+          "Jun",
+          "Jul",
+          "Aug",
+          "Sep",
+          "Oct",
+          "Nov",
+          "Dec",
         ];
         while (i < count) {
           var x = dates[i];
@@ -93,21 +93,21 @@
             }),
           },
           {
-            name: "Di",
+            name: "Tu",
             data: generateData(11, {
               min: 0,
               max: 90,
             }),
           },
           {
-            name: "Mi",
+            name: "We",
             data: generateData(11, {
               min: 0,
               max: 90,
             }),
           },
           {
-            name: "Do",
+            name: "Th",
             data: generateData(11, {
               min: 0,
               max: 90,
@@ -128,7 +128,7 @@
             }),
           },
           {
-            name: "So",
+            name: "Su",
             data: generateData(11, {
               min: 0,
               max: 90,
@@ -139,6 +139,7 @@
           height: 350,
           type: "heatmap",
           animations: { enabled: false },
+          toolbar: { show: false },
         },
         dataLabels: {
           enabled: false,
