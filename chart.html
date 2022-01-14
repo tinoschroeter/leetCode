@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Simple HeatMap</title>
+    <title>Simple HeatMap apexcharts</title>
     <style>
       #chart {
         max-width: 650px;
@@ -28,111 +28,48 @@
     </script>
 
     <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
-
-    <script>
-      // Replace Math.random() with a pseudo-random number generator to get reproducible results in e2e tests
-      // Based on https://gist.github.com/blixt/f17b47c62508be59987b
-      var _seed = 42;
-      Math.random = function () {
-        _seed = (_seed * 16807) % 2147483647;
-        return (_seed - 1) / 2147483646;
-      };
-    </script>
-
-    <script>
-      function generateData(count, yrange) {
-        var i = 0;
-        var series = [];
-        const dates = [
-          "jan",
-          "Feb",
-          "Mar",
-          "Apr",
-          "May",
-          "Jun",
-          "Jul",
-          "Aug",
-          "Sep",
-          "Oct",
-          "Nov",
-          "Dec",
-        ];
-        while (i < count) {
-          var x = dates[i];
-          var y =
-            Math.floor(Math.random() * (yrange.max - yrange.min + 1)) +
-            yrange.min;
-
-          series.push({
-            x: x,
-            y: y,
-          });
-          i++;
-        }
-        return series;
-      }
-    </script>
   </head>
 
   <body>
     <div id="chart"></div>
 
     <script>
-      console.log(generateData(12, { min: 0, max: 90 }));
 
-      var options = {
+    const json = 
+    const contribution = JSON.parse(json);
+
+      const options = {
         animations: {
           enabled: false,
         },
         series: [
           {
             name: "Mo",
-            data: generateData(12, {
-              min: 0,
-              max: 90,
-            }),
+            data: contribution[0],
           },
           {
             name: "Tu",
-            data: generateData(12, {
-              min: 0,
-              max: 90,
-            }),
+            data: contribution[1],
           },
           {
             name: "We",
-            data: generateData(12, {
-              min: 0,
-              max: 90,
-            }),
+            data: contribution[2],
           },
           {
             name: "Th",
-            data: generateData(12, {
-              min: 0,
-              max: 90,
-            }),
+            data: contribution[3],
           },
           {
             name: "Fr",
-            data: generateData(12, {
-              min: 0,
-              max: 90,
-            }),
+            data: contribution[4],
           },
           {
             name: "Sa",
-            data: generateData(12, {
-              min: 0,
-              max: 90,
-            }),
+            data: contribution[5],
           },
           {
             name: "Su",
-            data: generateData(12, {
-              min: 0,
-              max: 90,
-            }),
+            data: contribution[6],
           },
         ],
         chart: {
@@ -150,7 +87,7 @@
         },
       };
 
-      var chart = new ApexCharts(document.querySelector("#chart"), options);
+      const chart = new ApexCharts(document.querySelector("#chart"), options);
       chart.render();
     </script>
   </body>
