@@ -13,11 +13,11 @@ jobs:
       - name: Use Node.js ${{ matrix.node-version }}
         uses: tj-actions/puppeteer@v3.2
         with:
-          node-version: 16
-      - run: npm install
-
+          args: npm install
       - name: Generate heatmap.png
-        run: node index.js
+        uses: tj-actions/puppeteer@v3.2
+        with: 
+          args: node index.js
 
       - name: Commit changes
         uses: EndBug/add-and-commit@v4
