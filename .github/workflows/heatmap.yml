@@ -2,7 +2,7 @@ name: Update heatmap
 
 on:
   push:
-    branches: [master, main]
+    branches: [master]
 
 jobs:
   heatmap:
@@ -14,10 +14,10 @@ jobs:
         uses: tj-actions/puppeteer@v3.2
         with:
           node-version: 16
-      - run: npm install && node index.js
+      - run: npm install
 
-        #- name: Generate heatmap.png
-        #run: node index.js
+      - name: Generate heatmap.png
+        run: node index.js
 
       - name: Commit changes
         uses: EndBug/add-and-commit@v4
