@@ -24,7 +24,7 @@ jobs:
         with:
           author_name: Tino Schroeter
           author_email: tino.schroeter@gmail.com
-          message: ":robot: generated new heatmap.png"
+          message: ":robot: generate new heatmap.png"
           add: "heatmap.png"
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
