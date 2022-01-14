@@ -34,6 +34,7 @@
     <div id="chart"></div>
 
     <script>
+    const year = new Date().getFullYear();
 
     const json = 
     const contribution = JSON.parse(json);
@@ -83,7 +84,7 @@
         },
         colors: ["#008FFB"],
         title: {
-          text: "LeetCode HeatMap (2022)",
+          text: `LeetCode HeatMap (${year})`,
         },
       };
 

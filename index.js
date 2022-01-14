@@ -29,6 +29,10 @@ commitsPromise.then((commits) => {
   const days = ["Mo", "Tu", "We", "Th", "Fr", "Sa", "Su"];
 
   const contribution = [];
+  // We need a list of weekdays and in that list another list with objects 
+  // in the form of { x: Jan y: 4 }. The end result should look like this:
+  // [[{ x: Jan y: 4 }, { x: Jan y: 4 }, ... ],[{ x: Jan y: 4 }, { x: Jan y: 4 } ...], ...]
+
   for (let day of days) {
     const data = [];
     for (let month of months) {
@@ -40,8 +44,12 @@ commitsPromise.then((commits) => {
     contribution.push(data);
   }
 
+  // Take our data and inject it into chart.html.
   const json = JSON.stringify(contribution);
-  updateFile = chart.replace(/^.*const json.*$/gm, `const json = '${json}'`);
+  const updateFile = chart.replace(
+    /^.*const json.*$/gm,
+    `const json = '${json}'`
+  );
 
   const getImage = async () => {
     const browser = await puppeteer.launch();
