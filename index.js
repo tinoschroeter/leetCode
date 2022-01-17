@@ -12,6 +12,7 @@ commitsPromise.then((commits) => {
     .filter((item) => item.message.match("Time"))
     .map((item) => item.date.split(" ").slice(0, 4).join("/"));
 
+  console.log("build headmap...")
   console.log(questions)
 
   const months = [
