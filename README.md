@@ -5,6 +5,8 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 
 ![heatmap](https://raw.githubusercontent.com/tinoschroeter/leetCode/master/heatmap.png)
 
+> npm install && npm run build
+
 ## Todo 2022 [x]
 
 |  Category   |      Name                            |                       Link                                          | solved | Notes |
