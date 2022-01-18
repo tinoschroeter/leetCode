@@ -1,4 +1,5 @@
 const { gitToJs } = require("git-parse");
+const { exec } = require("child_process");
 const puppeteer = require("puppeteer");
 const fs = require("fs");
 
@@ -12,8 +13,8 @@ commitsPromise.then((commits) => {
     .filter((item) => item.message.match("Time"))
     .map((item) => item.date.split(" ").slice(0, 4).join("/"));
 
-  console.log("build headmap...")
-  console.log(questions)
+  console.log("build headmap...");
+  console.log(`${questions.length} questions solved in total\n`);
 
   const months = [
     "Jan",
@@ -32,7 +33,7 @@ commitsPromise.then((commits) => {
   const days = ["Mo", "Tu", "We", "Th", "Fr", "Sa", "Su"];
 
   const contribution = [];
-  // We need a list of weekdays and in that list another list with objects 
+  // We need a list of weekdays and in that list another list with objects
   // in the form of { x: Jan y: 4 }. The end result should look like this:
   // [[{ x: Jan y: 4 }, { x: Jan y: 4 }, ... ],[{ x: Jan y: 4 }, { x: Jan y: 4 } ...], ...]
 
@@ -66,4 +67,21 @@ commitsPromise.then((commits) => {
     await browser.close();
   };
   getImage();
+
+  exec(
+    'git add heatmap.png; git commit -m "update heatmap.png"; git push',
+    (error, stdout, stderr) => {
+      if (error) {
+        console.error(`error: ${error.message}`);
+        return;
+      }
+
+      if (stderr) {
+        console.error(stderr);
+        return;
+      }
+
+      console.log("done");
+    }
+  );
 });
