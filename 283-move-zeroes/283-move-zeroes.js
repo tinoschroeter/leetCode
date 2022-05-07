@@ -2,21 +2,14 @@
  * @param {number[]} nums
  * @return {void} Do not return anything, modify nums in-place instead.
  */
-var moveZeroes = function(nums) {
-    let jumps = 0
-    let i = 0
+const moveZeroes = (nums) => {
+    let pointer = 0;
     
-    while(jumps < nums.length) {
-        if(nums[i] === 0) {
-            move(nums, i)
-        } else {
-            i++    
-        }
-        
-        jumps++
+    for(let i = 0; i<nums.length; i++) {
+        if(nums[i] !== 0) nums[pointer++] = nums[i]
     }
     
-    function move(arr, idx) {
-        arr.push(arr.splice(idx, 1))
+    for(let i = pointer; i<nums.length; i++) {
+        nums[i] = 0;
     }
 };
