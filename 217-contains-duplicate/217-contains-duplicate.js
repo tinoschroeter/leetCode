@@ -2,15 +2,16 @@
  * @param {number[]} nums
  * @return {boolean}
  */
-var containsDuplicate = function(nums) {
+const containsDuplicate = (nums) => {
+    const obj = {};
     
-    const counter = {}
-    
-    for(let val of nums) {
-        if(counter[val]) return true
-        counter[val] = true
+    for(let i = 0; i<nums.length; i++) {
+        const value = nums[i]
+        if(!obj[value]) {
+            obj[value] = true;
+        } else {
+            return true   
+        }
     }
     return false
 };
-
-// 1123
