@@ -5,14 +5,14 @@
  */
 const rotate = (nums, k) => {      
     
-    const tmpArray = [];
+    const tempArray = [];
     
     for(let i = 0; i<nums.length; i++) {
         const index = (i + k) % nums.length;
-        tmpArray[index] = nums[i];
+        tempArray[index] = nums[i];
     }
     
-    for(let i = 0; i<tmpArray.length; i++) {
-        nums[i] = tmpArray[i];
+    for(let i = 0; i<tempArray.length; i++) {
+        nums[i] = tempArray[i];
     }
 };
