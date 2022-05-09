@@ -3,19 +3,18 @@
  * @return {number[]}
  */
 const productExceptSelf = (nums) => {
+    
     const result = [];
-
-    let product = 1;
-    for(let i = 0; i<nums.length; i++){
-        result[i] = product;
-        product *= nums[i];
+    
+    for(let i = 0; i<nums.length; i++) {
+        let sum = 1;
+        for(let j = 0; j<nums.length; j++) {
+            if(j !== i) {
+                sum *= nums[j]
+            }
+        }
+        result.push(sum)
     }
-
-    product = 1;
-    for(let i = nums.length-1; i>=0; i--){
-        result[i] *= product;
-        product *= nums[i];
-    }
-
-    return result;
+    
+    return result
 };
