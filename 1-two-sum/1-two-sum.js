@@ -3,18 +3,13 @@
  * @param {number} target
  * @return {number[]}
  */
-var twoSum = function(nums, target) {
-    
-    const targets = {}
-    
+const twoSum = (nums, target) => {
+    const counter = {};   
     for(let i = 0; i<nums.length; i++) {
-        const reducer = target - nums[i]
+        const value = nums[i];
+        const diff = target - value;
         
-        if(targets.hasOwnProperty(reducer)) {
-            return [targets[reducer], i]
-        } else {
-            targets[nums[i]] = i
-        }
+        if(counter.hasOwnProperty(value)) return [i, counter[value]];       
+        counter[diff] = i
     }
-    return []
 };
