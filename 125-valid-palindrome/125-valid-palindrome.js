@@ -3,8 +3,17 @@
  * @return {boolean}
  */
 const isPalindrome = (s) => {
-    const alphanumeric = s.replace(/[\W_]+/g,"");
-    const string = alphanumeric.toLowerCase();
-
-    return string === string.split('').reverse().join('');
+    const newStr = s.replace(/[\W_]+/g,"").toLowerCase();
+        
+    let start = 0;
+    let end = newStr.length - 1;
+      
+    while(start < end) {
+        if(newStr[start] === newStr[end]) {
+            start++;
+            end--
+        } else return false
+    }
+    
+    return true;
 };
