@@ -3,17 +3,12 @@
  * @return {boolean}
  */
 const containsDuplicate = (nums) => {
+    const counter = {};
     
-    const obj = {};
-    
-    
-    for(let i = 0; i<nums.length; i++) {
+    for(let val of nums) {
+        if(counter[val]) return true;
         
-        const value = nums[i];
-        
-        if(obj[value]) return true
-        
-        obj[value] = true;
+        counter[val] = true;
     }
     
     return false;
