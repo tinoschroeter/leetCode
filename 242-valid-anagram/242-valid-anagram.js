@@ -5,5 +5,21 @@
  */
 const isAnagram = (s, t) => {
     
-    return s.split('').sort((a, b) => a > b ? 1 : -1).join('') === t.split('').sort((a, b) => a > b ? 1 : -1).join('')
-}
+    if(s.length !== t.length) return false
+    
+    const counter = {};
+        
+    for(let val of s) {
+        counter[val] ? counter[val] += 1 : counter[val] = 1;
+    }
+    
+    for(let val of t) {
+        if (counter[val]) {
+            counter[val] -= 1
+        } else {
+            return false;
+        }
+    }
+    
+    return true;
+};
