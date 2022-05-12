@@ -3,18 +3,17 @@
  * @return {number[]}
  */
 const productExceptSelf = (nums) => {
-    
     const result = [];
     
     for(let i = 0; i<nums.length; i++) {
         let sum = 1;
         for(let j = 0; j<nums.length; j++) {
-            if(j !== i) {
-                sum *= nums[j]
-            }
+            if(i !== j) {
+                sum *= nums[j];
+            }        
         }
-        result.push(sum)
-    }
+        result.push(sum);
+    }  
     
-    return result
+    return result;
 };
