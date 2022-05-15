@@ -4,24 +4,20 @@
  */
 const maxSubArray = (nums) => {
     
+    let pointer = 0;
+    let currentMax = 0;
+    let max = -Infinity;
     
-    let maxArray = -Infinity;
-    let currentSum = 0;
-    
-    for(let i = 0; i<nums.length; i++) {
+    while(pointer < nums.length) {
         
-        const value = nums[i];
+        currentMax += nums[pointer];
         
-        currentSum += value
+        max = Math.max(max, currentMax);
         
-        if(currentSum > maxArray) {
-            maxArray = currentSum
-        }
+        if(currentMax <= 0) currentMax = 0;
+        pointer++
         
-        if(currentSum <= 0) {
-            currentSum = 0;
-        }
     }
     
-    return maxArray;
+    return max;
 };
