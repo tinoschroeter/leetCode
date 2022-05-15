@@ -3,21 +3,19 @@
  * @return {number}
  */
 const maxProfit = (prices) => {
-    let buy = 0;
-    let sell = 1;   
+    
+    let pointer = 0;
     let max = 0;
     
-    while(buy < prices.length) {
+    for(let i = 1; i<prices.length; i++) {
         
-        if(prices[sell] > prices[buy]) {
-            const current = prices[sell] - prices[buy] ;
-            max = Math.max(current, max);
-        } else {
-            buy = sell;
-        }
+        const current =  prices[i] - prices[pointer];
         
-        sell++
+        if(current <= 0) pointer = i;
+        
+        max = Math.max(current, max);
+        
     }
     
-    return max
+    return max;
 };
