@@ -12,14 +12,14 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 ## Todo 2022 [x]
 
 <details>
-  <summary>Arrays & Hashing</summary>
+  <summary>Arrays & Hashing (2/3)</summary>
   </br>
 
-  | Status |                            Problem                                       | Difficulty |          Video Solution                |
-  |--------|:------------------------------------------------------------------------:|------------|:--------------------------------------:|
-  |  [X]   | ![Contains Duplicate](https://leetcode.com/problems/contains-duplicate/) |  (Easy)    | ![video](https://youtu.be/3OamzN90kPg) |
-  |  [ ]   | ![Valid Anagram](https://leetcode.com/problems/valid-anagram/)           |  (Easy)    | ![video](https://youtu.be/9UtInBqnCgA) |
-  |  [x]   | ![Two Sum](https://leetcode.com/problems/two-sum/)                       |  (Easy)    | ![video](https://youtu.be/KLlXCFG5TnA) |
+  | Status |                            Problem                                      | Difficulty |         Video Solution                |
+  |--------|:-----------------------------------------------------------------------:|------------|:-------------------------------------:|
+  | * [X]  | [Contains Duplicate](https://leetcode.com/problems/contains-duplicate/) |  (Easy)    | [video](https://youtu.be/3OamzN90kPg) |
+  | * [ ]  | [Valid Anagram](https://leetcode.com/problems/valid-anagram/)           |  (Easy)    | [video](https://youtu.be/9UtInBqnCgA) |
+  | * [x]  | [Two Sum](https://leetcode.com/problems/two-sum/)                       |  (Easy)    | [video](https://youtu.be/KLlXCFG5TnA) |
 
 </details>
 
