@@ -32,6 +32,7 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 <details>
   <summary>Two Pointers (3/5)</summary>
   </br>
+
   | Status |                            Problem                                      | Difficulty |         Video Solution                |
   |--------|:-----------------------------------------------------------------------:|------------|:-------------------------------------:|
   |  [ ]   | [Valid Palindrome](https://leetcode.com/problems/valid-palindrome/)     |   (Easy)   | [video](https://youtu.be/jJXJ16kPFWg) |
@@ -45,6 +46,7 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 <details>
   <summary>Sliding Window (1/6)</summary>
   </br>
+
   | Status |                            Problem                                      | Difficulty |         Video Solution                |
   |--------|:-----------------------------------------------------------------------:|------------|:-------------------------------------:|
   |  [ ]   | [Best Time to Buy & Sell Stock](https://leetcode.com/problems/best-time-to-buy-and-sell-stock/) | (Easy) | [video](https://youtu.be/1pkOgXD63yU) |
@@ -59,6 +61,7 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 <details>
   <summary>Stack (2/7)</summary>
   </br>
+
   | Status |                            Problem                                      | Difficulty |          Video Solution                |
   |--------|:-----------------------------------------------------------------------:|------------|:--------------------------------------:|
   |  [ ]   | [Valid Parentheses](https://leetcode.com/problems/valid-parentheses/)   |   (Easy)   |  [video](https://youtu.be/WTzjTskDFMg) |
@@ -74,6 +77,7 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 <details>
   <summary>Binary Search (2/7)</summary>
   </br>
+
   | Status |                            Problem                                      | Difficulty |          Video Solution                |
   |--------|:-----------------------------------------------------------------------:|------------|:--------------------------------------:|
   |  [x]   | [Binary Search](https://leetcode.com/problems/binary-search/)           |   (Easy)   |  [video](https://youtu.be/s4DPM8ct1pI) |
@@ -90,6 +94,7 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 <details>
   <summary>Linked List (1/11)</summary>
   </br>
+
   | Status |                            Problem                                      | Difficulty |         Video Solution                |
   |--------|:-----------------------------------------------------------------------:|------------|:-------------------------------------:|
   |  [ ]   | [Reverse Linked List](https://leetcode.com/problems/reverse-linked-list/) |  (Easy)  |  [video](https://youtu.be/G0_I-ZF0S38)|
@@ -109,6 +114,7 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 <details>
   <summary>Trees (0/15)</summary>
   </br>
+
   | Status |                            Problem                                      | Difficulty |         Video Solution                |
   |--------|:-----------------------------------------------------------------------:|------------|:-------------------------------------:|
   |  [ ]   | [Invert Binary Tree](https://leetcode.com/problems/invert-binary-tree/) |   (Easy)   |  [video](https://youtu.be/OnSn2XEQ4MY)|
@@ -133,6 +139,7 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 <details>
   <summary>Tries (0/3)</summary>
   </br>
+
   | Status |                            Problem                                      | Difficulty |         Video Solution                |
   |--------|:-----------------------------------------------------------------------:|------------|:-------------------------------------:|
 
@@ -143,6 +150,7 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 <details>
   <summary>Heap / Priority Queue (0/7)</summary>
   </br>
+
   | Status |                            Problem                                      | Difficulty |         Video Solution                |
   |--------|:-----------------------------------------------------------------------:|------------|:-------------------------------------:|
 
@@ -152,6 +160,7 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 <details>
   <summary>Backtracking (0/9)</summary>
   </br>
+
   | Status |                            Problem                                      | Difficulty |         Video Solution                |
   |--------|:-----------------------------------------------------------------------:|------------|:-------------------------------------:|
 
@@ -161,6 +170,7 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 <details>
   <summary>Graphs (0/13)</summary>
   </br>
+
   | Status |                            Problem                                      | Difficulty |         Video Solution                |
   |--------|:-----------------------------------------------------------------------:|------------|:-------------------------------------:|
 
@@ -170,6 +180,7 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 <details>
   <summary>Advanced Graphs (0/6)</summary>
   </br>
+
   | Status |                            Problem                                      | Difficulty |         Video Solution                |
   |--------|:-----------------------------------------------------------------------:|------------|:-------------------------------------:|
 
@@ -179,6 +190,7 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 <details>
   <summary>1-D Dynamic Programming (0/12)</summary>
   </br>
+
   | Status |                            Problem                                      | Difficulty |         Video Solution                |
   |--------|:-----------------------------------------------------------------------:|------------|:-------------------------------------:|
 
@@ -188,6 +200,7 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 <details>
   <summary>2-D Dynamic Programming (0/11)</summary>
   </br>
+
   | Status |                            Problem                                      | Difficulty |         Video Solution                |
   |--------|:-----------------------------------------------------------------------:|------------|:-------------------------------------:|
 
@@ -197,6 +210,7 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 <details>
   <summary>Greedy (0/8)</summary>
   </br>
+
   | Status |                            Problem                                      | Difficulty |         Video Solution                |
   |--------|:-----------------------------------------------------------------------:|------------|:-------------------------------------:|
 
@@ -206,6 +220,7 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 <details>
   <summary>Intervals (0/6)</summary>
   </br>
+
   | Status |                            Problem                                      | Difficulty |         Video Solution                |
   |--------|:-----------------------------------------------------------------------:|------------|:-------------------------------------:|
 
@@ -215,6 +230,7 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 <details>
   <summary>Math & Geometry (0/8)</summary>
   </br>
+
   | Status |                            Problem                                      | Difficulty |         Video Solution                |
   |--------|:-----------------------------------------------------------------------:|------------|:-------------------------------------:|
 
@@ -224,6 +240,7 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 <details>
   <summary>Bit Manipulation (1/7)</summary>
   </br>
+
   | Status |                            Problem                                      | Difficulty |         Video Solution                |
   |--------|:-----------------------------------------------------------------------:|------------|:-------------------------------------:|
 
