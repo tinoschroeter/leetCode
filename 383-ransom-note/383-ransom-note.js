@@ -5,12 +5,14 @@
  */
 const canConstruct = (ransomNote, magazine) => {
     
-    
     const counter = {};
     
+    
     for(let val of magazine) {
-        counter[val] ? counter[val] += 1 : counter[val] = 1;
+        counter[val] ? counter[val] +=1 : counter[val] = 1;
+
     }
+    
     
     for(let val of ransomNote) {
         
