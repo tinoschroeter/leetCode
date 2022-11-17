@@ -1,5 +1,4 @@
 const { gitToJs } = require("git-parse");
-const { exec } = require("child_process");
 const puppeteer = require("puppeteer");
 const fs = require("fs");
 
@@ -67,21 +66,7 @@ commitsPromise.then((commits) => {
     await browser.close();
   };
   getImage();
-
-  exec(
-    'git add heatmap.png; git commit -m "update heatmap.png"; git push',
-    (error, stdout, stderr) => {
-      if (error) {
-        console.error(`error: ${error.message}`);
-        return;
-      }
-
-      if (stderr) {
-        console.error(stderr);
-        return;
-      }
-
-      console.log("done");
-    }
+  console.log(
+    `git add heatmap.png; git commit -m "update heatmap.png"; git push`
   );
 });
