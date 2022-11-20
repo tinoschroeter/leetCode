@@ -66,6 +66,25 @@ commitsPromise.then((commits) => {
     await browser.close();
   };
   getImage();
+
+  fs.readFile("./README.md", "utf8", (err, data) => {
+    if (err) {
+      console.error(err);
+      return;
+    }
+    const updateFile = data.replace(
+      /^.*Questions solved.*$/gm,
+      `> Questions solved ${questions.length}`
+    );
+
+    fs.writeFile("./README.md", updateFile, (err) => {
+      if (err) {
+        console.error(err);
+        return;
+      }
+    });
+  });
+
   console.log(
     `git add heatmap.png; git commit -m "update heatmap.png"; git push`
   );
