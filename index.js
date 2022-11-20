@@ -106,6 +106,6 @@ commitsPromise.then((commits) => {
   });
 
   console.log(chalk.red(
-    `git add heatmap.png; git commit -m "update heatmap.png"; git push`
+    `git add heatmap.png README.md; git commit -m "update heatmap.png"; git push`
   ));
 });
