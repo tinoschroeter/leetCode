@@ -13,7 +13,7 @@ commitsPromise.then((commits) => {
     .map((item) => item.date.split(" ").slice(0, 4).join("/"));
 
   console.log("build headmap...");
-  console.log(`${questions.length} questions solved in total\n`);
+  console.log(`${questions.length} questions solved in total`);
 
   const months = [
     "Jan",
@@ -66,6 +66,19 @@ commitsPromise.then((commits) => {
     await browser.close();
   };
   getImage();
+
+  const today = new Date()
+    .toLocaleDateString("en-GB", {
+      weekday: "short",
+      day: "numeric",
+      year: "numeric",
+      month: "short",
+    })
+    .replaceAll(" ", "/")
+    .toLowerCase();
+  const countToday = questions.filter((item) => item.toLowerCase() === today);
+
+  console.log(`Solved Today: ${countToday.length}\n`);
 
   fs.readFile("./README.md", "utf8", (err, data) => {
     if (err) {
