@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/tinoschroeter/leetCode#readme",
   "dependencies": {
+    "chalk": "2.4",
     "git-parse": "^2.1.0",
     "puppeteer": "^13.0.1"
   }

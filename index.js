@@ -1,6 +1,7 @@
 const { gitToJs } = require("git-parse");
 const puppeteer = require("puppeteer");
 const fs = require("fs");
+const chalk = require("chalk");
 
 const commitsPromise = gitToJs("./");
 const chart = fs.readFileSync("./chart.html", "utf8");
@@ -13,7 +14,7 @@ commitsPromise.then((commits) => {
     .map((item) => item.date.split(" ").slice(0, 4).join("/"));
 
   console.log("build headmap...");
-  console.log(`${questions.length} questions solved in total`);
+  console.log(chalk.bold(`${questions.length} questions solved in total\n`));
 
   const months = [
     "Jan",
@@ -78,7 +79,13 @@ commitsPromise.then((commits) => {
     .toLowerCase();
   const countToday = questions.filter((item) => item.toLowerCase() === today);
 
-  console.log(`Solved Today: ${countToday.length}\n`);
+  const now = new Date();
+  const week = new Date(now.getFullYear(), now.getMonth(), now.getDate() - 7);
+
+  const lastWeek = questions.filter((item) => new Date(item) > week);
+
+  console.log(chalk.bold(`Solved last 7 days: ${lastWeek.length}`));
+  console.log(chalk.bold(`Solved Today: ${countToday.length}\n`));
 
   fs.readFile("./README.md", "utf8", (err, data) => {
     if (err) {
@@ -98,7 +105,7 @@ commitsPromise.then((commits) => {
     });
   });
 
-  console.log(
+  console.log(chalk.red(
     `git add heatmap.png; git commit -m "update heatmap.png"; git push`
-  );
+  ));
 });
