@@ -3,25 +3,22 @@
  * @return {boolean}
  */
 var isPalindrome = function(s) {
- 
-    const plainStr = s.replace(/[^a-zA-Z0-9]/g, '');
     
-    let idX = 0;
-    let idY = plainStr.length - 1;
+  
+  const str = s.replace(/[^0-9a-z]/gi, '').split("").map(char => char.toLowerCase()).join("");
     
+  let l = 0;
+  let r = str.length -1;
+     
+  while(l <= r) {
+      
+      if(str[l] === str[r]) {
+          l++
+          r--
+      } else {
+          return false;
+      }
+  }
     
-    while(idX <= idY) {
-        
-        const left = plainStr[idX].toLowerCase();
-        const right = plainStr[idY].toLowerCase();
-        
-        if(left === right) {
-            idX++
-            idY--
-        } else {
-            return false;
-        }
-    }
-    
-    return true;
-}
+   return true; 
+};
