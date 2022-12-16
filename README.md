@@ -15,3 +15,11 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 
 * [NeedCode 150](https://neetcode.io/practice)
 * [Grind 143](https://www.techinterviewhandbook.org/grind75?weeks=26&hours=23&difficulty=Easy&difficulty=Medium)
+
+## Resources
+
+* [algorithms study-cheatsheet](https://www.techinterviewhandbook.org/algorithms/study-cheatsheet/)
+* [data-structure-tutorial](https://www.javatpoint.com/data-structure-tutorial)
+* [javascript-tutorial](https://www.javatpoint.com/javascript-tutorial)
+* [clean-code-developer](https://clean-code-developer.de)
+* [musicforprogramming](https://musicforprogramming.net/latest/)
