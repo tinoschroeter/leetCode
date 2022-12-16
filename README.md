@@ -13,4 +13,5 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 
 ## Todo 2022 [x]
 
-[NeedCode 150](https://neetcode.io/practice)
+* [NeedCode 150](https://neetcode.io/practice)
+* [Grind 143](https://www.techinterviewhandbook.org/grind75?weeks=26&hours=23&difficulty=Easy&difficulty=Medium)
