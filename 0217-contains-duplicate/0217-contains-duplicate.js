@@ -4,14 +4,13 @@
  */
 var containsDuplicate = function(nums) {
     
-    const mem = new Map();
+    const map = {}
     
     for(let i = 0; i<nums.length; i++) {
         
-        if(mem.has(nums[i])) return true;
-           
-        mem.set(nums[i]);
+        const val = nums[i];
+        map[val] ? map[val] += 1 : map[val] = 1;
     }
     
-    return false;
-};
+    return Object.values(map).some(item => item >1);
+}
