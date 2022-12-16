@@ -3,15 +3,13 @@
  * @return {number}
  */
 var singleNumber = function(nums) {
-    const counter = {}; 
-    let result = null;
+      
+    const map = {};
     
-    nums.forEach(item => {
-        counter[item] ? counter[item] += 1 : counter[item] = 1;
-    })  
-
-   Object.keys(counter).forEach(item => {
-        if(counter[item] === 1) result = item;
-    })  
-    return result
+    for(let i = 0; i<nums.length; i++) {
+        const val = nums[i];
+        map[val] ? map[val] += 1 : map[val] = 1;
+    }
+    
+    return Object.keys(map).filter(item => map[item] === 1);
 };
