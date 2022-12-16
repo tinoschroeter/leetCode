@@ -3,17 +3,21 @@
  * @return {number}
  */
 var maxProfit = function(prices) {
+      
+    let buy = 0;
+    let sell = 1;
+    let max = 0;
     
-    
-    let idx = 0; 
-    let sum = 0;
-    
-    for(let i = 1; i<prices.length; i++) {
+    while(sell < prices.length) {
         
-        if(prices[idx] > prices[i]) idx = i;
-              
-        sum = Math.max((prices[i] - prices[idx]), sum)
+        const profit = prices[sell] - prices[buy];
+        max = Math.max(max, profit);
+        
+        if(prices[buy] > prices[sell]) buy = sell;
+        
+        sell++
+        
     }
     
-    return sum;
+    return max;
 };
