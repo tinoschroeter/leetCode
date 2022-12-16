@@ -4,21 +4,23 @@
  */
 var isValid = function(s) {
     
+    
     const stack = [];
     
-    const map = { 
+    const obj = {
         ")": "(",
         "}": "{",
         "]": "["
     }
     
-    for(let i = 0; i<s.length; i++) {
-        
-        
+    for(let i = 0; i<s.length;i++) {
         const val = s[i];
         
-        if(map[val] && map[val] === stack[stack.length - 1]) {
-            stack.pop()
+        if(obj[val]) {
+            const sVal = stack.pop();
+            
+            if(sVal !== obj[val]) return false;
+                
         } else {
             stack.push(val);
         }
