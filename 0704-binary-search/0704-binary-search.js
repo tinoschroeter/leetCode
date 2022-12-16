@@ -3,14 +3,12 @@
  * @param {number} target
  * @return {number}
  */
-const search = (nums, target) => {
-    
-    
+var search = function(nums, target) {
+        
     let l = 0;
     let r = nums.length - 1;
     
-    while(l<=r) {
-        
+    while(l <= r){     
         const mid = Math.floor((l + r) / 2);
         
         if(nums[mid] === target) return mid;
