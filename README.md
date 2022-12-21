@@ -3,7 +3,7 @@
 
 Collection of LeetCode questions to ace the coding interview! - Created using [LeetHub](https://github.com/QasimWani/LeetHub)
 
-> Questions solved 104
+> Questions solved 106
 
 ## Contribution 
 
