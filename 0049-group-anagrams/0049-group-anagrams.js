@@ -2,26 +2,27 @@
  * @param {string[]} strs
  * @return {string[][]}
  */
-var groupAnagrams = function(strs)  {
-    
+var groupAnagrams = function(strs) {
+  
+    const result = [];
     const map = {};
     
-    const getKey = (k) => k.split('').sort().join('');
-    
-    for(let i = 0;i<strs.length; i++) {
+    for(let str of strs) {
+        const sortStr = str.split('').sort().join('');
         
-        const key = getKey(strs[i]);
-        
-        if(!map[key]) map[key] = [];
+        if(map[sortStr]) {
+            
+            map[sortStr].push(str)
+        } else {
+            map[sortStr] = [];
+            map[sortStr].push(str);
+        }
     }
     
-    for(let i = 0;i<strs.length; i++) {
+    for(let key in map) {
         
-        const key = getKey(strs[i]);  
-        
-        map[key].push(strs[i]);          
+        result.push(map[key]);
     }
     
-    
-    return Object.values(map);
+    return result;
 };
