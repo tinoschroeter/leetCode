@@ -6,5 +6,5 @@ last=$(find . -path ./node_modules -prune -o -iname '*.js' -not -name 'index.js'
 
 echo $last
 echo -n ">> "
-cat "$(echo $last|awk '{ print $2 }' FS='/')/README.md" \
-  | grep 'href'|awk '{ print $2}' FS="\""
+cat "$(echo $last | awk '{ print $2 }' FS='/')/README.md" \
+  | grep 'href'|awk '{ print $2 }' FS="\""
