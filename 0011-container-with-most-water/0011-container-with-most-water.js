@@ -3,18 +3,28 @@
  * @return {number}
  */
 var maxArea = function(height) {
-    let idx = 0;
-    let idy = height.length - 1;
-    let max = -Infinity;
+      
+    let left = 0;
+    let right = height.length -1;
+    let max = 0;
     
-    while(idx < idy) {
-        const high = Math.min(height[idx], height[idy])
-        max = Math.max((high*(idy - idx)), max)
-      if(height[idx] < height[idy]) {
-           idx++
-       } else {
-           idy--
-       }
+    
+    while(left < right) {
+           
+        const minHeight = Math.min(height[left], height[right]);
+        const dist = right - left
+        
+        const vol = minHeight * dist;
+        
+        max = Math.max(vol, max);
+        
+        
+        if(height[left] < height[right]) {
+            left++
+        } else {
+            right--
+        }
     }
+    
     return max;
 };
