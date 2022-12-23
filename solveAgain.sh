@@ -1,6 +1,6 @@
 #!/bin/bash
 
-last=$(find . -path ./node_modules -prune -o -iname '*.js' -not -name 'index.js' -printf '%T+ %p\n' \
+last=$(find . -path ./node_modules -prune -o -iname '0*.js' -not -name 'index.js' -printf '%T+ %p\n' \
   | sort \
   | head -n1)
 
