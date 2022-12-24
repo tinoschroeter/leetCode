@@ -11,7 +11,6 @@
  * @return {number}
  */
 var maxDepth = function(root) {
-    
     let max = 0;
     
     const dfs = (node, count) => {
