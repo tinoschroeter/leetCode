@@ -3,15 +3,20 @@
  * @return {number[]}
  */
 var productExceptSelf = function(nums) {
-    
+   
     const result = [];
     
-    for(let i = 0; i<nums.length; i++) { //O(n^2)
-    
+    for(let i = 0; i<nums.length; i++) {
+        
+        let idx = 0;
         let sum = 1;
-        for(let j = 0; j<nums.length; j++) {
+        
+        while(idx<nums.length) {
             
-            if(j !== i) sum *= nums[j] 
+            if(i !== idx) {
+                sum *= nums[idx];
+            }
+            idx++   
         }
         result.push(sum);
     }
