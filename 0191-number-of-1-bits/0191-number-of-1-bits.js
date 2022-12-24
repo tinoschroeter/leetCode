@@ -2,9 +2,7 @@
  * @param {number} n - a positive integer
  * @return {number}
  */
-var hammingWeight = function(n) {
-    
-    
+var hammingWeight = function(n) {    
     let result = 0;
     
     while(n) {
@@ -13,4 +11,5 @@ var hammingWeight = function(n) {
     }
     
     return result;
+
 };
