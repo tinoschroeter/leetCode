@@ -3,28 +3,26 @@
  * @param {number} target
  * @return {boolean}
  */
-const searchMatrix = (matrix, target) => {
+var searchMatrix = function(matrix, target) {
     
-    const flatA = matrix.flat();
+    const arr = matrix.flat()
+
+    let left = 0;
+    let right = arr.length -1;
     
     
-    let l = 0;
-    let r = flatA.length - 1;
-    
-    
-    while(l <= r) {
+    while(left <= right) {
         
-        const mid = Math.round((l + r) / 2);
-        const val = flatA[mid];
+        const mid = Math.round((right + left) /2);
         
-        if(val === target) return true;
+        if(arr[mid] === target) return true;
         
-        if(val > target) {
-            r = mid - 1;
+        if(arr[mid] < target) {
+            left = mid + 1;
         } else {
-            l = mid + 1;
+            right = mid - 1;
         }
     }
     
-    return false;
+    return false
 };
