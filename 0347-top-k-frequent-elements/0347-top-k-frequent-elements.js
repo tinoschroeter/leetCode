@@ -4,22 +4,10 @@
  * @return {number[]}
  */
 var topKFrequent = function(nums, k) {
-
-    const counter = {};
-    const result = [];
     
-    for(let i = 0; i<nums.length; i++) {
-        
-        const val = nums[i];
-        
-        counter[val] ? counter[val] += 1 : counter[val] = 1;
-    }
+    const map = {};
+    for(let val of nums) map[val] ? map[val] += 1 : map[val] = 1;
+    const sorted = Object.keys(map).sort((a, b) => map[b] - map[a]);
     
-    
-    const mFreq = Object.keys(counter).sort((a, b) => counter[a] - counter[b]);
-    
-    
-    for(let i = mFreq.length - 1; mFreq.length -k <= i; i--) result.push(mFreq[i])
-    
-    return result;
+    return sorted.slice(0, k)
 };
