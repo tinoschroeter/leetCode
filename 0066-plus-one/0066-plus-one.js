@@ -3,27 +3,25 @@
  * @return {number[]}
  */
 var plusOne = function(digits) {
-     
-   
-    const result = digits.reverse();
     
-    let one = 1, i = 0;
     
-    while(one) {
+    for(let i = digits.length -1; i>=0; i--) {  
         
-        if(i<result.length) {
-            if(result[i] === 9) {
-                result[i] = 0;
-            } else {
-                result[i] += 1;
-                one = 0;
-            }
-         } else {
-            result.push(1);
-            one = 0;
-        }
-      i++  
+        const addOne = digits[i] + 1;
+        
+        if(addOne > 9) {;
+            digits[i] = 0;
+         } 
+         if(i === 0 && addOne > 9) {
+            digits.unshift(1); 
+         } 
+         if(addOne < 10) {
+            digits[i] = addOne;
+             break;
+         }  
+        
+
     }
     
-    return result.reverse()
+    return digits;
 };
