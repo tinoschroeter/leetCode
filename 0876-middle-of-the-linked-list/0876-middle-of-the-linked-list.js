@@ -11,24 +11,17 @@
  */
 var middleNode = function(head) {
     
-    const arr = []
-    let node = head;
-    let middle = head;
+    let slow = head
+    let fast = head
     
-    while(node) {
-        
-        arr.push(node.val);
-        node = node.next
+    while(fast.next !== null) {    
+        slow = slow.next
+        if(fast.next.next) {
+            fast = fast.next.next
+        } else {
+            fast = fast.next
+        }
     }
     
-    const stop = Math.floor(arr.length / 2);
-    
-    
-    for(let i = 0; i<stop; i++) {
-        
-        middle = middle.next;
-    }
-    
-    return middle;
-    
+    return slow;
 };
