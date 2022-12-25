@@ -4,26 +4,22 @@
  * @return {boolean}
  */
 var isAnagram = function(s, t) {
-        
-    const words = {};
-    let count = 0;
     
-    for(let i = 0; i<s.length; i++) {
-        const val = s[i];
-        words[val] ? words[val] += 1 : words[val] = 1;
-        count++
-    }
     
-    for(let i = 0; i<t.length; i++) {
+    if(s.length !== t.length) return false
+    
+    const map = {};
+    
+    for(let val of s) map[val] ? map[val] += 1 : map[val] = 1
+    
+    for(let val of t) {
         
-        const val = t[i];
-        if(words[val]) {
-            words[val] -= 1
-            count--
+        if(map[val]) {
+            map[val] -= 1;
         } else {
             return false
         }
     }
     
-    return (count === 0) ? true : false;
+    return true
 };
