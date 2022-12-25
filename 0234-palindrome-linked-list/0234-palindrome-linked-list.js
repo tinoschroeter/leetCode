@@ -11,27 +11,25 @@
  */
 var isPalindrome = function(head) {
     
-    
     const arr = [];
-    let node = head;
-    
-    while(node) {
-        arr.push(node.val)
-        node = node.next
+
+    while(head) {
+        arr.push(head.val)
+        head = head.next
     }
     
-    let l = 0;
-    let r = arr.length - 1;
+    console.log(arr)
     
-    while(l < r) {
-        
+    let l = 0, r = arr.length -1;
+    
+    while(l<r) {
         if(arr[l] === arr[r]) {
-            l++;
+            l++
             r--
         } else {
             return false
         }
     }
-    
+
     return true
 };
