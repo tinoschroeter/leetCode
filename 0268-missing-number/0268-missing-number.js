@@ -4,17 +4,19 @@
  */
 var missingNumber = function(nums) {
     
-    const numbers = {};
+    let min = 0;
+    let max = 0
+    const map = {}
     
-    for(let i = 0; i<nums.length; i++) {
-        const n = nums[i];
-        if(!numbers[n]) numbers[n] = true;
+    for(let val of nums) {
+        min = Math.min(min, val);
+        max = Math.max(max, val);
+        map[val] = true
     }
     
-    for(let i = 1; i<nums.length + 1; i++) {
-        
-        if(!numbers[i]) return i
+    for(let i = min; i<=max; i++) {
+        if(!map[i]) return i
     }
     
-    return 0;
+    return max + 1
 };
