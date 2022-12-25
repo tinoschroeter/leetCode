@@ -4,21 +4,21 @@
  */
 var isPalindrome = function(s) {
     
-  
-  const str = s.replace(/[^0-9a-z]/gi, '').split("").map(char => char.toLowerCase()).join("");
     
-  let l = 0;
-  let r = str.length -1;
-     
-  while(l <= r) {
-      
-      if(str[l] === str[r]) {
-          l++
-          r--
-      } else {
-          return false;
-      }
-  }
+    const str = s.replace(/[^0-9a-zA-Z]/g, '').split('').map(a => a.toLowerCase()).join('');
     
-   return true; 
+    let left = 0;
+    let right = str.length -1;
+    
+    while(left < right) {
+        
+        if(str[left] === str[right]) {
+            left++
+            right--
+        } else {
+            return false;
+        }
+    }
+    
+    return true
 };
