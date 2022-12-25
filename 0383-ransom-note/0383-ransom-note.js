@@ -5,27 +5,19 @@
  */
 var canConstruct = function(ransomNote, magazine) {
     
+    const count = {};
     
-    
-    const char = {};
-    
-    for(let i = 0; i<magazine.length; i++) {
-        
-        char[magazine[i]] ? char[magazine[i]] += 1 : char[magazine[i]] = 1;
+    for(let val of magazine) {
+        count[val] ? count[val] += 1 : count[val] = 1;
     }
     
-    
-    for(let i = 0; i<ransomNote.length; i++) {
-        
-        const c = ransomNote[i]
-        
-        if(char[c]) {
-            char[c] -= 1
+    for(let val of ransomNote) {
+        if(count[val]) {
+            count[val] -= 1
         } else {
             return false
         }
     }
     
     return true;
-    
 };
