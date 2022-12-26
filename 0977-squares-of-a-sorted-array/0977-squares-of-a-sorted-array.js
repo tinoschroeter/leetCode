@@ -3,14 +3,6 @@
  * @return {number[]}
  */
 var sortedSquares = function(nums) {
-    
-    
-    const squares = [];
-    
-    for(let val of nums) {
-        const square = val * val;
-        squares.push(square);
-    }
-    
-    return squares.sort((a,b)=>a-b);
+    // O(n log n)
+    return nums.map(a => a*a).sort((a,b)=>a-b);
 };
