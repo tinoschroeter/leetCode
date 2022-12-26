@@ -3,26 +3,15 @@
  * @return {number}
  */
 var majorityElement = function(nums) {
-   
+    const counter = {}
     
-    let max = [0, 0];
-    const count = {};
-    
-    for(let i = 0; i<nums.length; i++) {
-        
-        const val = nums[i];
-        
-        if(count[val]) {
-            count[val] += 1
+    for(let i = 0; i<nums.length; i++) {    
+        if(counter[nums[i]]) {
+            counter[nums[i]] += 1;
         } else {
-            count[val] = 1;
-        }
-        
-        if(count[val] > max[1]) {
-            max[0] = val;
-            max[1] = count[val];
+            counter[nums[i]] = 1;
         }
     }
     
-    return max[0];
+    return Object.keys(counter).sort((a, b) => counter[b] - counter[a])[0];
 };
