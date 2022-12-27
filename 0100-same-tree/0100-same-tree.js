@@ -11,15 +11,18 @@
  * @param {TreeNode} q
  * @return {boolean}
  */
-
-const isSameTree = (p, q) => {
+var isSameTree = function(p, q) {
+  
+    const dfs = (p, q) => {
+        
+        if(!p && !q) return true
+        
+        if(p && q && p.val === q.val) {
+            return dfs(p.left, q.left) && dfs(p.right, q.right);
+        } else {
+            return false;
+        }
+    }
     
-    if(!p && !q) { 
-        return true
-    }
-    if(p && q && p.val === q.val) {
-        return isSameTree(p.left, q.left) && isSameTree(p.right, q.right);
-    } else {
-        return false
-    }
+  return dfs(p, q);  
 };
