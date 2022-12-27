@@ -3,26 +3,25 @@
  * @return {string[][]}
  */
 var groupAnagrams = function(strs) {
-  
-    const result = [];
-    const map = {};
     
-    for(let str of strs) {
-        const sortStr = str.split('').sort().join('');
-        
-        if(map[sortStr]) {
-            
-            map[sortStr].push(str)
+    const uniq = {};
+    const result =  [];
+    
+    for(let val of strs) {
+        const sorted = val.split('').sort().join('');
+        if(!uniq[sorted]) {
+            uniq[sorted] = []
+            uniq[sorted].push(val)
         } else {
-            map[sortStr] = [];
-            map[sortStr].push(str);
+            uniq[sorted].push(val)
         }
     }
     
-    for(let key in map) {
-        
-        result.push(map[key]);
+    
+    for(let key in uniq) {
+        result.push(uniq[key]);
     }
     
     return result;
+
 };
