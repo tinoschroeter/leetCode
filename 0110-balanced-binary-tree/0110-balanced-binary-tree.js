@@ -11,8 +11,7 @@
  * @return {boolean}
  */
 var isBalanced = function(root) {
-    
-    
+
     const dfs = (node) => {
         
         if(!node) return [true, 0];
