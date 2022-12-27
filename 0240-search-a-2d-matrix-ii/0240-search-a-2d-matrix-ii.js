@@ -5,27 +5,22 @@
  */
 var searchMatrix = function(matrix, target) {
      
-    const bs = (arr) => {
-        
-        let l = 0;
-        let r = arr.length -1;
-        
-        while(l<=r) {
-            const mid = Math.round((l + r) / 2)
-            
-            if(arr[mid] === target) return true
-            
-            if(arr[mid] > target) {
-                r = mid - 1
+    const bs = (arr, t) => {
+        let left = 0, right = arr.length -1;
+        while(left <= right) {
+            const mid = Math.round((left + right) /2);
+            if(arr[mid] === t) return mid;
+            if(t < arr[mid]) {
+                right = mid -1;
             } else {
-                l = mid + 1
+                left = mid + 1;
             }
         }
+        return -1;
     }
     
-    
-    for(let val of matrix) {
-        if(bs(val)) return true
+    for(let arr of matrix) {
+        if(bs(arr, target) >= 0) return true;
     }
     
     return false;
