@@ -5,26 +5,31 @@
 var isValid = function(s) {
     
     
+    const br = new Map();
+        br.set(')', '(');
+        br.set('}', '{');
+        br.set(']', '[');
+    
     const stack = [];
     
-    const obj = {
-        ")": "(",
-        "}": "{",
-        "]": "["
-    }
     
-    for(let i = 0; i<s.length;i++) {
-        const val = s[i];
+    let idx = 0;
+    while(idx < s.length) {
         
-        if(obj[val]) {
-            const sVal = stack.pop();
+        const val = s[idx]
+
+        if(br.has(val)) {
+            const lav = stack.pop()
             
-            if(sVal !== obj[val]) return false;
-                
+            if(br.get(val) !== lav) {
+                return false
+            }
         } else {
-            stack.push(val);
+            stack.push(val)
         }
+        
+        idx++
     }
     
-    return stack.length === 0 ? true : false;
+    return stack.length === 0
 };
