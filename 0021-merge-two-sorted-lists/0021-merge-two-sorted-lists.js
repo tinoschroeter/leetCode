@@ -12,25 +12,24 @@
  */
 var mergeTwoLists = function(list1, list2) {
     
-    let node = new ListNode();
-    let tail = node;
+    let head = new ListNode(77)
+    let node = head;
     
     while(list1 && list2) {
-        
+     
         if(list1.val < list2.val) {
-            tail.next = list1
+            head.next = new ListNode(list1.val)
             list1 = list1.next
         } else {
-            tail.next = list2
+            head.next = new ListNode(list2.val)
             list2 = list2.next
         }
+        head = head.next
         
-        tail = tail.next;
     }
     
-    if(list1) tail.next = list1;
-    if(list2) tail.next = list2;
-
+    if(list1) head.next = list1
+    if(list2) head.next = list2
     
     return node.next;
 };
