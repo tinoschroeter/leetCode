@@ -3,23 +3,20 @@
  * @return {number}
  */
 var climbStairs = function(n) {
+  
+
     
-    const mem = {
-        '0': 1,
-        '1': 1,
-        '2': 2
+    const mem = new Map();
+    mem.set(0,0).set(1,1).set(2,2).set(3,3);
+    
+    
+    let idx = 0;
+    let sum = 0;
+    
+    while(idx <= n) {
+        if(!mem.has(idx)) mem.set(idx,  mem.get(idx-1) + mem.get(idx-2));
+        idx++
     }
     
-    let i = 0
-    
-    while(i <= n) {
-        
-      if(!mem[i]) {  
-        const sum = mem[i - 1] + mem[i - 2];
-        mem[i] = sum; 
-        console.log(mem)
-      }
-      i++
-    }
-    return mem[n]
+    return mem.get(n);
 };
