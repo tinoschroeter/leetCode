@@ -3,20 +3,21 @@
  * @return {number}
  */
 var missingNumber = function(nums) {
+       
+    const set = new Set();
+    let last = 0;
     
-    let min = 0;
-    let max = 0
-    const map = {}
     
     for(let val of nums) {
-        min = Math.min(min, val);
-        max = Math.max(max, val);
-        map[val] = true
+        set.add(val)
+        last = Math.max(val, last)
     }
     
-    for(let i = min; i<=max; i++) {
-        if(!map[i]) return i
+    for(let val of set) {
+        if(val !== 0 && !set.has(val -1)) {
+          return val -1;  
+        } 
     }
     
-    return max + 1
+    return last + 1;
 };
