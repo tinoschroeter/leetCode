@@ -13,8 +13,14 @@ commitsPromise.then((commits) => {
     .filter((item) => item.message.match("Time"))
     .map((item) => item.date.split(" ").slice(0, 4).join("/"));
 
+  const uniq = commits
+    .filter((item) => item.filesAdded[0])
+    .filter((item) => item.filesAdded[0].path.match(/.js/))
+    .map((item) => item.filesAdded[0].path.split('/')[1]);
+
   console.log("build headmap...");
-  console.log(chalk.bold(`${questions.length} questions solved in total\n`));
+  console.log(chalk.bold(`${questions.length} questions solved in total`));
+  console.log(chalk.bold(`${uniq.length} uniq questions solved in total\n`));
 
   const months = [
     "Jan",
@@ -94,7 +100,7 @@ commitsPromise.then((commits) => {
     }
     const updateFile = data.replace(
       /^.*Questions solved.*$/gm,
-      `> Questions solved ${questions.length}`
+      `> Questions solved ${questions.length} uniq: ${uniq.length}`
     );
 
     fs.writeFile("./README.md", updateFile, (err) => {
