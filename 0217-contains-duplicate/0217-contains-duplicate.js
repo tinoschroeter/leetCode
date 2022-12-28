@@ -3,17 +3,15 @@
  * @return {boolean}
  */
 var containsDuplicate = function(nums) {
-   
-    
-    const map = {};
-    
-    for(let val of nums) {
-        map[val] ? map[val] += 1 : map[val] = 1
-    }
+     
+    const map = new Map();
     
     for(let val of nums) {
-        if(map[val] > 1) return true
+        if(map.has(val)) {
+            return true
+        } else {
+            map.set(val, true)
+        }
     }
-    
     return false;
 };
