@@ -11,25 +11,23 @@
  * @return {TreeNode}
  */
 var invertTree = function(root) {
-    
-    
-    if(!root) return root;
-    
+   
+    if(!root) return root
+      
     const queue = [];
     queue.push(root);
     
-    
-    while(queue.length !== 0) {
-        const node = queue.shift();
+    while(queue.length) {
         
-        const tmp = node.left
-        node.left = node.right
-        node.right = tmp;
+        const node = queue.shift()
         
-        if(node.left) queue.push(node.left);
-        if(node.right) queue.push(node.right);
+        const tmp = node.right
+        node.right = node.left
+        node.left = tmp
+        
+        if(node.left) queue.push(node.left)
+        if(node.right) queue.push(node.right)
     }
     
-    return root;
-    
+    return root
 };
