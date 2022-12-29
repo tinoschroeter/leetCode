@@ -2,49 +2,37 @@
  * @param {number[]} nums
  * @return {number[][]}
  */
-const threeSum = (nums, sums = []) => {
-    nums.sort((a, b) => a - b);
-
-    for (let first = 0; first < nums.length - 2; first++) {
-        if (isPrevDuplicate(nums, first)) continue;
-
-        const [target, left, right] = [
-            -nums[first],
-            first + 1,
-            nums.length - 1,
-        ];
-
-        search(nums, target, left, right, sums);
-    }
-
-    return sums;
-};
-
-const isPrevDuplicate = (nums, index) => nums[index - 1] === nums[index];
-
-const isNextDuplicate = (nums, index) => nums[index] === nums[index + 1];
-
-const search = (nums, target, left, right, sums) => {
-    while (left < right) {
-        const [leftVal, rightVal] = [nums[left], nums[right]];
-        const sum = leftVal + rightVal;
-
-        const isTarget = sum === target;
-        if (isTarget) {
-            sums.push([-target, leftVal, rightVal]);
-            left++;
-            right--;
-
-            while (left < right && isPrevDuplicate(nums, left)) left++;
-            while (left < right && isNextDuplicate(nums, right)) right--;
-
-            continue;
+var threeSum = function(nums) {
+     
+    const result = [];
+    const numsS = nums.sort((a, b) => a-b);
+    const set = new Set();
+    
+    for(let i = 0; i<numsS.length; i++) {
+        
+        let l = i + 1;
+        let r = numsS.length -1;
+        
+        while(l < r) { 
+            const sum = numsS[i] + numsS[l] + numsS[r];
+            
+            if(sum === 0) {
+                const val = numsS[i].toString() + numsS[l].toString() + numsS[r].toString();
+                
+                if(!set.has(val)) {
+                    result.push([numsS[i], numsS[l], numsS[r]]);
+                    set.add(val)
+                }
+            } 
+            
+            if(sum < 0) {
+                l++   
+            } else {
+                 r-- 
+            }
         }
-
-        const isTargetGreater = sum < target;
-        if (isTargetGreater) left++;
-
-        const isTargetLess = target < sum;
-        if (isTargetLess) right--;
     }
+    
+    console.log(set)
+    return result;
 };
