@@ -3,22 +3,24 @@
  * @return {number[]}
  */
 var productExceptSelf = function(nums) {
-   
+    
+    
+    
+    // 1 2 3 4
+   //  4 3 2 1
+    
     const result = [];
     
     for(let i = 0; i<nums.length; i++) {
         
-        let idx = 0;
-        let sum = 1;
-        
-        while(idx<nums.length) {
-            
-            if(i !== idx) {
-                sum *= nums[idx];
+        let prod = 1;
+        for(let j =0; j<nums.length; j++) {
+            if(i !== j) {
+                prod *= nums[j]
             }
-            idx++   
         }
-        result.push(sum);
+        
+        result.push(prod)
     }
     
     return result;
