@@ -11,21 +11,16 @@
  */
 var reverseList = function(head) {
     
-    
-    let node = head
-    let reverse = head;
-    const stack = []
+    let prew = null;
+    let node = head;
+    let next = null;
     
     while(node) {
-        stack.push(node.val) 
-        node = node.next
+        next = node.next;
+        node.next = prew;
+        prew = node;
+        node = next;
     }
     
-    node = head
-    while(node) {
-        node.val = stack.pop()
-        node = node.next;
-    }
-    
-    return reverse;
+    return prew
 };
