@@ -5,13 +5,16 @@
 var findDuplicate = function(nums) {
     
     
-    const map = {}
-    let idx = 0;
+    const counter = [];
     
-    while(idx < nums.length) {
+    for(let val of nums) {
         
-        if(map[nums[idx]]) return nums[idx]
-        map[nums[idx]] = true
-        idx++
+        if(counter[val]) {
+            return val
+        } else {
+            counter[val] = true
+        }
     }
+    
+    return -1;
 };
