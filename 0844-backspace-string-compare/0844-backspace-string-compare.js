@@ -4,15 +4,19 @@
  * @return {boolean}
  */
 var backspaceCompare = function(s, t) {
- 
-    const bs = (str) => {  
-        const arr = [];
-        for(let val of str) (val === "#") ? 
-            arr.pop() : 
-            arr.push(val)
-        
-        return arr.join('')
+    
+    const backspace = str => {
+        const stack = [];
+        for(let val of str) {
+            if(val === '#') {
+                stack.pop()
+            } else {
+                stack.push(val)
+            }
+        }
+        return stack.join('');
     }
     
-    return bs(s) === bs(t)
-}
+    
+  return backspace(s) === backspace(t);  
+};
