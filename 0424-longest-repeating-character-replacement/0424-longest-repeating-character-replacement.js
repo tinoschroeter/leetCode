@@ -4,21 +4,29 @@
  * @return {number}
  */
 var characterReplacement = function(s, k) {
-  
-        let count = {}
-        let res = 0
-
-        let l = 0
-        let maxf = 0
-        for(let r = 0; r<s.length; r++) {
-            count[s[r]] ? count[s[r]] += 1 : count[s[r]] = 1;
-            maxf = Math.max(maxf, count[s[r]])
-
-            if ((r - l + 1) - maxf > k) { 
-                count[s[l]] -= 1
-                l += 1
-            }
-            res = Math.max(res, r - l + 1)
+    
+    
+    let l = 0;
+    let max = 0;
+    let mostCommon = 0;
+    const charCounter = {}
+    
+    
+    for(let r = 0;r<s.length; r++) {
+        
+        charCounter[s[r]] ? 
+            charCounter[s[r]] += 1 : 
+            charCounter[s[r]] = 1;
+        
+        mostCommon = Math.max(mostCommon, charCounter[s[r]]);
+        
+        if(r - l + 1 - mostCommon>k) {
+            charCounter[s[l]] -= 1
+            l++
         }
-        return res
-};
+        
+        max = Math.max(max, r - l + 1);
+    }
+    
+    return max;
+}
