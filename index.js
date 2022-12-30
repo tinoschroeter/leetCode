@@ -11,6 +11,7 @@ commitsPromise.then((commits) => {
 
   const questions = commits
     .filter((item) => item.message.match("Time"))
+    .filter((item) => new Date(item.date) >= new Date().getFullYear())
     .map((item) => item.date.split(" ").slice(0, 4).join("/"));
 
   const uniq = commits
