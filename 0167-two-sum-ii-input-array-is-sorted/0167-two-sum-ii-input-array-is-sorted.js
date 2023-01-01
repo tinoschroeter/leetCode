@@ -11,10 +11,10 @@ var twoSum = function(numbers, target) {
     while(l<r) {
         
         const sum = numbers[l] + numbers[r];
-        if(sum === target) return [l + 1, r + 1];
+        if(sum === target) return [l+1, r+1];
         
-        sum < target ? l++ : r--;
+        sum < target ? l++ : r--
     }
     
-    return [];
+    return []
 };
