@@ -12,15 +12,14 @@
 var middleNode = function(head) {
     
     
-    let slow = head;
+    let slow = head
     let fast = head;
     
     
-    while(fast.next) {
+    while(fast && fast.next) {
+        
         slow = slow.next
-        fast.next.next ? 
-            fast = fast.next.next : 
-            fast = fast.next
+        fast = fast.next.next
     }
     
     return slow;
