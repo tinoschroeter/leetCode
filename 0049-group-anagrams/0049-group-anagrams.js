@@ -4,24 +4,23 @@
  */
 var groupAnagrams = function(strs) {
     
-    const uniq = {};
-    const result =  [];
+    
+    const map = {};
+    const result = [];
     
     for(let val of strs) {
-        const sorted = val.split('').sort().join('');
-        if(!uniq[sorted]) {
-            uniq[sorted] = []
-            uniq[sorted].push(val)
-        } else {
-            uniq[sorted].push(val)
+        
+        const sStr = val.split('').sort().join('');
+        if(map[sStr]) {
+            map[sStr].push(val)
+        } else{
+            map[sStr] = [val]
         }
     }
     
-    
-    for(let key in uniq) {
-        result.push(uniq[key]);
+    for(val in map) {
+        result.push(map[val])
     }
     
     return result;
-
 };
