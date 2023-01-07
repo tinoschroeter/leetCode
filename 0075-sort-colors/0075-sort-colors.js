@@ -4,24 +4,24 @@
  */
 var sortColors = function(nums) {
     
+
+    let stack = []
     
-    const color = {};
+    for(let val of nums) {
+        if(val === 2) stack.push(2)    
+    }
     
-    for(let val of nums) color[val] ? color[val] += 1 : color[val] = 1;
+    for(let val of nums) {
+        if(val === 1) stack.push(1)
+    }
+    
+    for(let val of nums) {
+        if(val === 0) stack.push(0)
+    }
+    
     
     for(let i = 0; i<nums.length; i++) {
         
-        if(color[0]) {
-            nums[i] = 0
-            color[0] -= 1;
-        } else if(color[1]) {
-            nums[i] = 1;
-            color[1] -= 1;
-        } else if(color[2]) {
-            nums[i] = 2;
-            color[2] -= 1;
-        }
+        nums[i] = stack.pop();
     }
-    
-    return nums;
 };
