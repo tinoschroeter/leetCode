@@ -10,33 +10,30 @@
  * @return {void} Do not return anything, modify head in-place instead.
  */
 var reorderList = function(head) {
-        
-    const arr = [];
+
     let node = head;
+    const values = []
     
     while(node) {
-        arr.push(node.val)
-        node = node.next;
-    }
-    
-    let count = 1;
-    let left = 0;
-    let right = arr.length - 1;
-    
-    node = head;
-    
-    while(left <= right) {
-        if(count % 2 === 1) {
-            node.val = arr[left]
-            left++
-        } else {
-            node.val = arr[right]
-            right--
-        }
-        
-        count++
+        values.push(node.val)
         node = node.next
     }
     
-    return head;
+    let c = 1, l = 0, r = values.length -1;
+    node = head;
+    
+    while(l<=r) {
+        if(c % 2 === 1) {
+            node.val = values[l]
+            l++
+        } else {
+            node.val = values[r]
+            r--
+        }
+        
+        c++
+        node = node.next;
+    }
+    
+    return head
 };
