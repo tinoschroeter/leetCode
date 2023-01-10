@@ -1,4 +1,5 @@
 # leetCode
+
 ![last-commit](https://img.shields.io/github/last-commit/tinoschroeter/leetCode.svg?style=flat)
 
 Collection of LeetCode questions to ace the coding interview! - Created using [LeetHub](https://github.com/QasimWani/LeetHub)
@@ -24,5 +25,6 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 * [data-structure-tutorial](https://www.javatpoint.com/data-structure-tutorial)
 * [visualgo](https://visualgo.net/en)
 * [javascript-tutorial](https://www.javatpoint.com/javascript-tutorial)
+* [javascript-reference](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference)
 * [clean-code-developer](https://clean-code-developer.de)
 * [musicforprogramming](https://musicforprogramming.net/latest/)
