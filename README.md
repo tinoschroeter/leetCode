@@ -25,6 +25,7 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 * [data-structure-tutorial](https://www.javatpoint.com/data-structure-tutorial)
 * [visualgo](https://visualgo.net/en)
 * [javascript-tutorial](https://www.javatpoint.com/javascript-tutorial)
+* [Modern-javascript-tutorial](https://javascript.info/)
 * [javascript-reference](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference)
 * [clean-code-developer](https://clean-code-developer.de)
 * [musicforprogramming](https://musicforprogramming.net/latest/)
