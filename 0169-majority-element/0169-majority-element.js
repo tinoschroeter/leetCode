@@ -3,12 +3,17 @@
  * @return {number}
  */
 var majorityElement = function(nums) {
-
-    const counter = {};
     
-    for(let val of nums) {
-        counter[val] ? counter[val] += 1 : counter[val] = 1;
-    }
+    const map = { max: [0, 0] };
     
-    return Object.keys(counter).sort((a,b) => counter[b] - counter[a])[0];
+    nums.forEach(item => {
+        map[item] ? map[item] += 1 : map[item] = 1;
+        
+        if(map.max[0] < map[item]) {
+            map.max[0] = map[item]
+            map.max[1] = item;
+        }
+    })
+    
+    return map.max[1]
 };
