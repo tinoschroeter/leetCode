@@ -4,15 +4,19 @@
  */
 var isPalindrome = function(s) {
     
-    const str = s.replace(/[^a-z0-9]/ig, '');
-     
-    let left = 0, right = str.length-1;
     
-    while(left<right) {     
-        if(str[left].toLowerCase() !== str[right].toLowerCase()) return false
+    const str = s.replace(/[\W_]+/g,"").toLowerCase();
+    
+    let l = 0, r = str.length -1;
+    
+    while(l<r) {
         
-        left++, right--
+        if(str[l] === str[r]) {
+            l++
+            r--
+        } else {
+            return false
+        }
     }
-    
     return true;
 };
