@@ -3,15 +3,12 @@
  * @return {number}
  */
 var singleNumber = function(nums) {
-   
     
     const map = {};
     
-    for(let val of nums) 
-        map[val] ? map[val] = false : map[val] = true
+    nums.forEach(val => {
+        map[val] ? map[val] += 1 : map[val] = 1;
+    })
     
-    console.log(map)
-    
-    for(let val in map) 
-        if(map[val]) return val
-}
+    return nums.filter(item => map[item] === 1)[0];
+};
