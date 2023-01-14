@@ -5,18 +5,24 @@
  */
 var backspaceCompare = function(s, t) {
     
-    const backspace = str => {
+    const toString = str => {
+        const arr = str.split('')
         const stack = [];
-        for(let val of str) {
-            if(val === '#') {
-                stack.pop()
-            } else {
+        
+        for(let val of arr) {
+            if(val !== '#') {
                 stack.push(val)
+            } else {
+                stack.pop()
             }
         }
-        return stack.join('');
+        
+        return stack.join('')
     }
     
-    
-  return backspace(s) === backspace(t);  
+    if(toString(s) === toString(t)) {
+        return true;
+    } else {
+        return false;
+    }
 };
