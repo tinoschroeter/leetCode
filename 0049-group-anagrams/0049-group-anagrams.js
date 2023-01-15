@@ -4,23 +4,13 @@
  */
 var groupAnagrams = function(strs) {
     
-    
     const map = {};
-    const result = [];
     
-    for(let val of strs) {
-        
-        const sStr = val.split('').sort().join('');
-        if(map[sStr]) {
-            map[sStr].push(val)
-        } else{
-            map[sStr] = [val]
-        }
-    }
+    strs.forEach(item => {
+        const sorted = item.split('').sort().join(''); 
+        map[sorted] ? map[sorted].push(item) : map[sorted] = [item];
+    });
     
-    for(val in map) {
-        result.push(map[val])
-    }
     
-    return result;
+    return Object.values(map);
 };
