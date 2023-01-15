@@ -5,21 +5,18 @@
  */
 var searchMatrix = function(matrix, target) {
     
+    const arr = matrix.flat();
     
-    const flatMatrix = matrix.flat();
-    
-    
-    let l = 0, r = flatMatrix.length -1;
+    let l = 0, r = arr.length -1;
     
     while(l<=r) {
+        const mid = Math.round((l +r) / 2);
         
-        const mid = Math.round((l + r) /2);
-        if(flatMatrix[mid] === target) return true;
-        
-        if(target < flatMatrix[mid]) {
+        if(arr[mid] === target) return true;
+        if(target < arr[mid]) {
             r = mid -1;
         } else {
-            l = mid + 1;
+            l = mid +1;
         }
     }
     
