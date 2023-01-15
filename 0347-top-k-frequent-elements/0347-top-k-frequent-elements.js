@@ -5,12 +5,19 @@
  */
 var topKFrequent = function(nums, k) {
     
-    const counter = {}
-
+    const map = {};
+    
     for(let val of nums) {
-        counter[val] ? counter[val] += 1 : counter[val] = 1;
+        map[val] ? map[val] += 1 : map[val] = 1;
     }
     
-
-    return Object.keys(counter).sort((a, b) => counter[b] - counter[a]).slice(0, k);
+    const maxStack = Object.keys(map).sort((a, b) => map[a] - map[b]);
+    
+    const result = [];
+    
+    for(let i = 0; i<k; i++) {
+        result.push(maxStack.pop());
+    }
+    
+    return result;
 };
