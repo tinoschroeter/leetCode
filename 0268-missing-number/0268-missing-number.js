@@ -4,17 +4,12 @@
  */
 var missingNumber = function(nums) {
     
-    const map = new Map();
-    let max = 0;
+    const map = {};
     
-    for(let val of nums) {
-        max = Math.max(max, val);
-        map.set(val, true);
+    nums.forEach(item => map[item] = true);
+    
+    
+    for(let num = 0; num<nums.length +1; num++) {
+        if(!map[num]) return num;
     }
-    
-    for(let start = 0; start<max; start++) {
-        if(!map.has(start)) return start;
-    }  
-    
-    return max + 1;
 };
