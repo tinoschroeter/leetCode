@@ -4,17 +4,22 @@
  */
 var moveZeroes = function(nums) {
     
-    const numbers = [];
+    const zero = [];
+    const noneZero = nums.filter(item => {
+        if(item !== 0) {
+            return true;
+        } else {
+            zero.push(0)
+            return false;
+        }
+    });
     
-    for(let val of nums) {
-        if(val !== 0) numbers.push(val)
-    }
 
-    for(let i = 0; i<numbers.length; i++) {
-        nums[i] = numbers[i];
-    }
+    const result = [...noneZero, ...zero];
     
-    for(let i = numbers.length;i<nums.length;i++) {
-        nums[i] = 0;
-    }
+    result.forEach((val, i) => {
+        nums[i] = result[i]
+    })
+    
+    return nums;
 };
