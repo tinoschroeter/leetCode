@@ -5,21 +5,22 @@
  */
 var isAnagram = function(s, t) {
     
-    const counter = {};
-    let count = 0;
-    for(let val of s) {
-        counter[val] ? counter[val] += 1 : counter[val] = 1;
-        count++
-    }
     
-    for(let val of t) {
-        if(counter[val]) {
-            counter[val] -= 1
-            count--
+    const map = {};
+    
+    s.split('').forEach(item => map[item] ? map[item] += 1 : map[item] = 1);
+    
+    for(let item of t.split('')) {
+        if(map[item]) {
+            map[item] -= 1
         } else {
-            return false;
+            return false
         }
     }
     
-    return count === 0
+    for(let val in map) {
+        if(map[val]) return false;
+    }
+
+    return true
 };
