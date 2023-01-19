@@ -12,18 +12,16 @@
  */
 var postorderTraversal = function(root) {
     
-    
-    const res = [];
-    
+    const result = []
     const dfs = node => {
-        
         if(!node) return
         
-        if(node.left) dfs(node.left)
-        if(node.right) dfs(node.right)
-        res.push(node.val)
-    }
+        if(node.left) dfs(node.left);
+        if(node.right) dfs(node.right);
+        result.push(node.val)
+    };
     
     dfs(root)
-    return res;
+    
+    return result;
 };
