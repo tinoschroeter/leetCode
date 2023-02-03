@@ -4,13 +4,10 @@
  */
 var findDuplicate = function(nums) {
     
-    const set = new Set();
-    let result = -1
+    const count = new Set();
     
-    nums.forEach(item => {
-        if(set.has(item)) result = item;
-        set.add(item);
-    })
-    
-    return result;
+    for(let val of nums) {
+        if(count.has(val)) return val
+        count.add(val)
+    }
 };
