@@ -7,16 +7,16 @@ var searchMatrix = function(matrix, target) {
     
     const arr = matrix.flat();
     
-    let l = 0, r = arr.length -1;
+    l = 0, r = arr.length -1
     
     while(l<=r) {
-        const mid = Math.round((l +r) / 2);
-        
+        const mid = Math.round((l + r) / 2);
         if(arr[mid] === target) return true;
+        
         if(target < arr[mid]) {
-            r = mid -1;
+            r = mid - 1;
         } else {
-            l = mid +1;
+            l = mid + 1;
         }
     }
     
