@@ -4,15 +4,14 @@
  */
 var maxArea = function(height) {
     
+    
     let l = 0, r = height.length -1;
     let max = 0;
     
+    
     while(l<r) {
-        
-        const min = Math.min(height[l], height[r]);
-        const vol = (r - l) * min;
+        const vol = Math.min(height[l], height[r]) * (r - l);
         max = Math.max(max, vol);
-        
         
         if(height[l] < height[r]) {
             l++
@@ -21,5 +20,5 @@ var maxArea = function(height) {
         }
     }
     
-    return max
+    return max;
 };
