@@ -5,15 +5,18 @@
  */
 var twoSum = function(nums, target) {
     
-    const counter = new Map();
+    const map = new Map();
     
     for(let i = 0; i<nums.length; i++) {
         
         const diff = target - nums[i];
         
-        if(counter.has(diff)) return [counter.get(diff), i];
-        counter.set(nums[i], i)
+        if(map.has(diff)) {
+            return [map.get(diff), i];
+        } else {
+            map.set(nums[i], i)
+        }
     }
     
-    return [-1,-1]
+    return []
 };
