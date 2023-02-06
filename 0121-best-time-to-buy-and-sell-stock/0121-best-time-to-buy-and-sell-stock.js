@@ -4,21 +4,18 @@
  */
 var maxProfit = function(prices) {
     
-    let buy = 0, sell = 1;
     let max = 0;
+    let l = 0, r = 1;
     
-    
-    while(sell <prices.length) {
-        
-        const prof = prices[sell] - prices[buy] 
+    while(r<prices.length) {
+        const prof = prices[r] - prices[l]; 
         max = Math.max(prof, max);
         
-        
-        if(prices[buy] > prices[sell]) {
-            buy = sell;
+        if(prices[l] > prices[r]) {
+            l=r
         }
         
-        sell++
+        r++
     }
     
     return max
