@@ -10,10 +10,10 @@ var climbStairs = function(n) {
         3: 3
     }
     
-    const rec = (val) => {
+    const result = (val) => {
         if(mem[val]) return mem[val];
-        return mem[val] = rec(val-2) + rec(val-1);
+        return mem[val] = result(val-2) + result(val-1);
     }
     
-    return rec(n)
-};
+    return result(n);
+}
