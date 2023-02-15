@@ -11,13 +11,13 @@ var topKFrequent = function(nums, k) {
         map[val] ? map[val] += 1 : map[val] = 1;
     }
     
-    const elements = Object.keys(map).sort((a, b) => map[a] - map[b]);
-    const result = [];
+    const result = Object.keys(map).sort((a, b) => {
+        
+        return (map[a] < map[b]) ? 1 : -1;
+    })
     
-    for(let i = 0; i<k; i++) {
-        result.push(elements.pop());
-    }
+    console.log(map)
+    console.log(result)
     
-    return result;
-    
+    return result.slice(0, k)
 };
