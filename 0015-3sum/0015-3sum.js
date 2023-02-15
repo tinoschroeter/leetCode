@@ -3,36 +3,30 @@
  * @return {number[][]}
  */
 var threeSum = function(nums) {
-     
-    const result = [];
-    const numsS = nums.sort((a, b) => a-b);
-    const set = new Set();
     
-    for(let i = 0; i<numsS.length; i++) {
+    const numbers = nums.sort((a,b) => a -b);
+    const result = [];
+    const set = new Set()
+    
+    for(let i = 0; i<numbers.length; i++) {
         
-        let l = i + 1;
-        let r = numsS.length -1;
+        let l = i + 1, r = numbers.length -1;
         
-        while(l < r) { 
-            const sum = numsS[i] + numsS[l] + numsS[r];
+        while(l<r) {    
+            const sum = numbers[i] + numbers[l] + numbers[r];
             
             if(sum === 0) {
-                const val = numsS[i].toString() + numsS[l].toString() + numsS[r].toString();
+                const val = numbers[i].toString() + numbers[l].toString() + numbers[r].toString();
                 
                 if(!set.has(val)) {
-                    result.push([numsS[i], numsS[l], numsS[r]]);
-                    set.add(val)
+                    result.push([numbers[i], numbers[l], numbers[r]]);
+                    set.add(val);
                 }
-            } 
-            
-            if(sum < 0) {
-                l++   
-            } else {
-                 r-- 
             }
+            
+            (sum > 0) ? r-- : l++;
         }
     }
     
-    console.log(set)
     return result;
 };
