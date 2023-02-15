@@ -5,15 +5,12 @@
 var containsDuplicate = function(nums) {
     
     
-    const map = {};
+    const set = {};
     
     for(let val of nums) {
-        if(map[val]) {
-            return true
-        } else {
-            map[val] = true
-        }
+        if(set[val]) return true
+        set[val] = true
     }
     
-    return false;
+    return false
 };
