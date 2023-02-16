@@ -2,34 +2,24 @@
  * @param {string} s
  * @return {boolean}
  */
-var isValid = function(s) {
-    
-    
-    const br = new Map();
-        br.set(')', '(');
-        br.set('}', '{');
-        br.set(']', '[');
-    
-    const stack = [];
-    
-    
-    let idx = 0;
-    while(idx < s.length) {
-        
-        const val = s[idx]
+var isValid = function (s) {
+  const map = {
+    ")": "(",
+    "]": "[",
+    "}": "{",
+  };
 
-        if(br.has(val)) {
-            const lav = stack.pop()
-            
-            if(br.get(val) !== lav) {
-                return false
-            }
-        } else {
-            stack.push(val)
-        }
-        
-        idx++
+  // "()[]"
+  const stack = [];
+
+  for(let item of s.split('')) {
+    if (map[item]) {
+      const val = stack.pop();
+      if (val !== map[item]) return false;
+    } else {
+      stack.push(item);
     }
-    
-    return stack.length === 0
+  };
+
+  return stack.length === 0 ? true : false;
 };
