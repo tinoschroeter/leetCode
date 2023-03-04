@@ -12,18 +12,18 @@
  */
 var inorderTraversal = function(root) {
     
-    
-    if(!root) return []
-    const result = []
+    const result = [];
     
     const dfs = node => {
-        if(!root) return
         
-        if(node.left) dfs(node.left)
-        result.push(node.val)
-        if(node.right) dfs(node.right)
+        if(!node) return 
+        
+        if(node.left) dfs(node.left);
+        result.push(node.val)    
+        if(node.right) dfs(node.right);
     }
     
-    dfs(root)
+    dfs(root);
+    
     return result;
 };
