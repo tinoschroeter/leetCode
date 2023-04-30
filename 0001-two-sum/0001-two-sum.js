@@ -4,17 +4,20 @@
  * @return {number[]}
  */
 var twoSum = function(nums, target) {
-    
-    
+
     const map = new Map();
+    const result = [];
     
-    for(let i = 0; i<nums.length; i++) {
+    nums.forEach((item, i) => {
+        const diff = target - item;
         
-        const diff = target - nums[i];
-        
-        if(map.has(diff)) return [map.get(diff), i];
-        map.set(nums[i], i);
-    }
+        if(map.has(diff)) {
+            result.push(map.get(diff));
+            result.push(i);            
+        } else {
+            map.set(item, i);
+        }
+    })
     
-    return [];
+    return result;
 };
