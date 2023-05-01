@@ -3,14 +3,12 @@
  * @return {void} Do not return anything, modify nums in-place instead.
  */
 var sortColors = function(nums) {
-
-    const result = [[],[],[]]
-        
-    nums.forEach(item => {    
-        if(item === 0) result[0].push(0)
-        if(item === 1) result[1].push(1)
-        if(item === 2) result[2].push(2)
+    
+    const bucket = [];
+    
+    nums.forEach(item => {
+        bucket[item] ? bucket[item].push(item) : bucket[item] = [item];
     })
     
-    result.flat().forEach((item, i) => nums[i] = item);
+    bucket.flat().map((item, i) => nums[i] = item);
 };
