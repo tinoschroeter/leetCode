@@ -6,10 +6,13 @@ var missingNumber = function(nums) {
     
     const map = {};
     
-    nums.forEach(item => map[item] = true);
+    nums.map(item => map[item] = true);
+    let i = 0
     
-    
-    for(let num = 0; num<nums.length +1; num++) {
-        if(!map[num]) return num;
+    for(; i<nums.length; i++) {
+        
+        if(!map[i]) return i
     }
+    
+    return i;
 };
