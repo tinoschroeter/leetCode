@@ -4,7 +4,13 @@
  */
 var singleNumber = function(nums) {
     
-    const map = {};
-    nums.map(item => map[item] ? map[item] += 1 : map[item] = 1);
-    return nums.filter(item => map[item] === 1)[0];
+    const count = {};
+    
+    for(let val of nums) {
+        count[val] ? count[val] += 1 : count[val] = 1;
+        }
+    
+    for(let val of nums) {
+        if(count[val] === 1) return val;
+    }
 };
