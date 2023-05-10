@@ -4,17 +4,8 @@
  */
 var containsDuplicate = function(nums) {
     
-    const map = {};
+    const set = new Set();
     
-    for(let i = 0; i<nums.length; i++) {
-        const val = nums[i];
-        
-        if(map[val]) {
-            return true
-        } else {
-            map[val] = true;
-        }
-    }
-    
-    return false;
+    nums.forEach(item => set.add(item));
+    return nums.length !== set.size;
 };
