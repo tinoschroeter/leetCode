@@ -7,16 +7,14 @@ var isAnagram = function(s, t) {
     
     if(s.length !== t.length) return false
     
-    const map = {};
-    s.split("").map(item => map[item] ? map[item] += 1 : map[item] = 1);
+    const counter = {};
+    s.split("").map(item => {
+        counter[item] ? counter[item] += 1 : counter[item] = 1
+    });
     
-    
-    for(let i = 0; i<t.length; i++) {
-        
-        const item = t[i];
-    
-        if(map[item]) {
-            map[item] -= 1
+    for(let item of t) {
+        if(counter[item]) {
+            counter[item] -= 1
         } else {
             return false
         }
