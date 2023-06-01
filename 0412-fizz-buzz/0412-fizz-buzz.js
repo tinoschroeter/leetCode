@@ -6,15 +6,15 @@ var fizzBuzz = function(n) {
     
     const result = [];
     
-    for(let val = 1; val<=n; val++) {
-        if(val % 3 === 0 && val % 5 === 0) {
+    for(let i = 1; i<=n; i++) {
+        if(i % 3 === 0 && i % 5 === 0) {
             result.push("FizzBuzz")
-        } else if(val % 3 === 0) {
-            result.push("Fizz");
-        } else if(val % 5 === 0) {
+        } else if(i % 3 === 0) {
+            result.push("Fizz")
+        } else if(i % 5 === 0) {
             result.push("Buzz")
         } else {
-            result.push(val.toString())
+            result.push(i.toString())
         }
     }
     
