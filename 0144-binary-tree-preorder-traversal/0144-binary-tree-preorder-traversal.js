@@ -12,18 +12,17 @@
  */
 var preorderTraversal = function(root) {
     
+    if(!root) return []
+    const result = [];
     
-    const res = [];
-    
-    const dfs = node => {
+    const dfs = (node) => {
+        if(!node) return;
         
-        if(!root) return
-        
-        res.push(node.val)
-        if(node.left) dfs(node.left)
+        result.push(node.val);
+        if(node.left) dfs(node.left);
         if(node.right) dfs(node.right)
     }
     
     dfs(root)
-    return res;
+    return result;
 };
