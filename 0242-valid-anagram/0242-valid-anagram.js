@@ -5,18 +5,17 @@
  */
 var isAnagram = function(s, t) {
     
-    if(s.length !== t.length) return false
     
-    const counter = {};
-    s.split("").map(item => {
-        counter[item] ? counter[item] += 1 : counter[item] = 1
-    });
-    
-    for(let item of t) {
-        if(counter[item]) {
-            counter[item] -= 1
+    if(s.length !== t.length) return false;
+    const obj = {};
+
+    s.split("").forEach(item => obj[item] ? obj[item] += 1 : obj[item] = 1);
+
+    for(let val of t.split("")) {
+        if(obj[val]) {
+            obj[val] -= 1;
         } else {
-            return false
+            return false;
         }
     }
     
