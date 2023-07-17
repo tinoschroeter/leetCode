@@ -4,10 +4,14 @@
  */
 var findDuplicate = function(nums) {
     
-    const count = new Set();
+    const map = new Map();
     
     for(let val of nums) {
-        if(count.has(val)) return val
-        count.add(val)
+        
+        if(!map.has(val)) {
+            map.set(val, true)
+        } else {
+            return val
+        }
     }
 };
