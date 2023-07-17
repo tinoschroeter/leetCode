@@ -13,20 +13,18 @@
  */
 var searchBST = function(root, val) {
     
-   if(!root) return null; 
-   let node = root;
+    let node = root;
     
     while(node !== null) {
         
-        if(node.val === val) {
-            return node
-        }
+        if(node.val === val) return node
+        
         if(node.val > val) {
-            if(!node.left) return null
-            node = node.left
-        } else {
-            if(!node.right) return null
-            node = node.right
+            node = node.left 
+        } else { 
+            node = node.right;
         }
     }
+    
+    return null;
 };
