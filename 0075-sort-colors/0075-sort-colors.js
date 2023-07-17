@@ -4,11 +4,10 @@
  */
 var sortColors = function(nums) {
     
-    const bucket = [];
-    
+    const result = [];
     nums.forEach(item => {
-        bucket[item] ? bucket[item].push(item) : bucket[item] = [item];
+        result[item] ? result[item].push(item) : result[item] = [item];  
     })
     
-    bucket.flat().map((item, i) => nums[i] = item);
+    result.flat().forEach((item, i) => nums[i] = item);
 };
