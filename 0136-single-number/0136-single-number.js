@@ -4,13 +4,13 @@
  */
 var singleNumber = function(nums) {
     
-    const count = {};
+    const map = {}
     
-    for(let val of nums) {
-        count[val] ? count[val] += 1 : count[val] = 1;
-        }
+    nums.forEach(item => {
+        map[item] ? map[item] += 1 : map[item] = 1
+    });
     
-    for(let val of nums) {
-        if(count[val] === 1) return val;
+    for(let item of nums) {
+        if(map[item] === 1) return item;
     }
 };
