@@ -4,19 +4,19 @@
  */
 var isPalindrome = function(x) {
     
-    if(x < 0) return false;
     
-    const num = x.toString().split('');
+    if(x < 0) return false
     
-    let l = 0, r = num.length -1;
+    
+    const str = x.toString();
+    
+    let l = 0, r = str.length -1;
     
     while(l<=r) {
-        if(num[l] === num[r]) {
-            l++
-            r--
-        } else {
-            return false
-        }
+        if(str[l] !== str[r]) return false
+        
+        l++
+        r--
     }
     
     return true;
