@@ -6,27 +6,21 @@
 var canConstruct = function(ransomNote, magazine) {
     
     
-    const counter = {};
-    let count = 0
+    const map = {};
     
-    for(let val of magazine) {
-        if(counter[val]) {
-          counter[val] += 1  
-        } else { 
-            counter[val] = 1;
-        }
-        count++
-    }
+    magazine.split("").forEach(item => {
+        map[item] ? map[item] += 1 : map[item] = 1;
+    })
     
     
     for(let val of ransomNote) {
-        if(counter[val]) {
-            counter[val] -= 1
-            count--
+        
+        if(map[val]) {
+            map[val] -= 1
         } else {
             return false
         }
     }
     
-    return true
+    return true;
 };
