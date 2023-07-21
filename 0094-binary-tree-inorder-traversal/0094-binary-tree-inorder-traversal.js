@@ -15,15 +15,13 @@ var inorderTraversal = function(root) {
     const result = [];
     
     const dfs = node => {
+        if(!node) return
         
-        if(!node) return 
-        
-        if(node.left) dfs(node.left);
-        result.push(node.val)    
-        if(node.right) dfs(node.right);
+        dfs(node.left);
+        result.push(node.val)
+        dfs(node.right);
     }
     
     dfs(root);
-    
     return result;
 };
