@@ -4,18 +4,20 @@
  * @return {boolean}
  */
 var isAnagram = function(s, t) {
-    
+  
+    const map = {};
     
     if(s.length !== t.length) return false;
-    const obj = {};
-
-    s.split("").forEach(item => obj[item] ? obj[item] += 1 : obj[item] = 1);
-
+    
+    s.split("").forEach(item => {
+        map[item] ? map[item] += 1 : map[item] = 1;
+    });
+    
     for(let val of t.split("")) {
-        if(obj[val]) {
-            obj[val] -= 1;
+        if(map[val]) {
+            map[val] -= 1
         } else {
-            return false;
+            return false
         }
     }
     
