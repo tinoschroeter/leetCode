@@ -3,5 +3,9 @@
  * @return {string}
  */
 var toLowerCase = function(s) {
-    return s.split("").map(item => item.toLowerCase()).join("");
+    
+    let str = "";
+    for(let val of s) str += val.toLowerCase()
+    
+    return str;
 };
