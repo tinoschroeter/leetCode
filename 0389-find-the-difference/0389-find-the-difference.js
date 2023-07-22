@@ -5,17 +5,18 @@
  */
 var findTheDifference = function(s, t) {
     
+    
     const map = {};
     
-    const add = item => map[item] ? map[item] += 1 : map[item] = 1;
+    s.split("").forEach(item => {
+        map[item] ? map[item] += 1 : map[item] = 1
+    })
     
-    s.split("").map(item => add(item));
-    t.split("").map(item => add(item));
-    
-    console.log(map);
-    for(let i in map) {
-        if(map[i] % 2 !== 0) return i
+    for(let val of t.split("")) {
+        if(map[val]) {
+            map[val] -= 1
+        } else {
+            return val
+        }
     }
-    
-    return "";
 };
