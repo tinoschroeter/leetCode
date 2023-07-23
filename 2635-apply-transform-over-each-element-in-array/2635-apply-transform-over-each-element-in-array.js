@@ -6,5 +6,12 @@
 var map = function(arr, fn) {
     
     
-    return arr.map(fn);
+    const result = [];
+    
+    for(let val in arr) {
+        
+        result.push(fn(arr[val], Number(val)))
+    }
+    
+    return result;
 };
