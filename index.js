@@ -11,7 +11,9 @@ commitsPromise.then((commits) => {
 
   const questions = commits
     .filter((item) => item.message.match("Time"))
-    .filter((item) => new Date(item.date) >= new Date("2023-01-01T00:00:00.000Z"))
+    .filter(
+      (item) => new Date(item.date) >= new Date("2023-01-01T00:00:00.000Z")
+    )
     .map((item) => item.date.split(" ").slice(0, 4).join("/"));
 
   //console.log(JSON.stringify(questions, null, 2));
@@ -22,7 +24,7 @@ commitsPromise.then((commits) => {
   const uniq = commits
     .filter((item) => item.filesAdded[0])
     .filter((item) => item.filesAdded[0].path.match(/.js/))
-    .map((item) => item.filesAdded[0].path.split('/')[1]);
+    .map((item) => item.filesAdded[0].path.split("/")[1]);
 
   console.log("build headmap...");
   console.log(chalk.bold(`${questionsTotal.length} questions solved in total`));
@@ -54,7 +56,7 @@ commitsPromise.then((commits) => {
     for (let month of months) {
       const count =
         questions.filter((item) => item.match(day) && item.match(month))
-          .length + 1;
+          .length + 0.6;
       data.push({ x: month, y: count });
     }
     contribution.push(data);
