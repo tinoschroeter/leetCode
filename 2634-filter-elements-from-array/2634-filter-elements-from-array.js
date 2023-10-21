@@ -5,5 +5,17 @@
  */
 var filter = function(arr, fn) {
    
-    return arr.filter(fn);
+   
+    const result = [];
+    
+    
+    for(let i = 0; i<arr.length; i++) {
+        const val = arr[i];
+        
+        const filtering = fn(val, i);
+        
+        if(filtering) result.push(val);
+    }
+    
+    return result;
 };
