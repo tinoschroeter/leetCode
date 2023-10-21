@@ -2,21 +2,22 @@
  * @param {string} val
  * @return {Object}
  */
-var expect = function(val) {
+const expect = (val) => {
+    
     
     const toBe = item => {
-        if(item === val) return true; 
+        if(val === item) return true;
         
-        throw new Error("Not Equal"); 
+        throw new Error("Not Equal");
     }
     
     const notToBe = item => {
-        if(item !== val) return true; 
+        if(val !== item) return true;
         
         throw new Error("Equal");
     }
     
-    return { toBe, notToBe};
+    return {toBe, notToBe};
 };
 
 /**
