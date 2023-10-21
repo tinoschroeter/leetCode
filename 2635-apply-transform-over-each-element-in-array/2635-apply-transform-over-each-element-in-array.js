@@ -3,7 +3,7 @@
  * @param {Function} fn
  * @return {number[]}
  */
-var map = function(arr, fn) {
+const map = (arr, fn) => {
     
     const result = [];
     
