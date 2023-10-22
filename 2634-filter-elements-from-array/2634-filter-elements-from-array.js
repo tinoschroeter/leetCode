@@ -6,5 +6,16 @@
 var filter = function(arr, fn) {
     
     
-    return arr.filter(fn);
+    const result = [];
+    
+    
+    for(let i = 0; i<arr.length; i++) {
+        const val = arr[i];
+        
+        const res = fn(val, i);
+        
+        if(res) result.push(val)
+    }
+    
+    return result;
 };
