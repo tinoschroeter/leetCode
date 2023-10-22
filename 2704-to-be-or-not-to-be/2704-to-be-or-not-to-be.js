@@ -2,8 +2,7 @@
  * @param {string} val
  * @return {Object}
  */
-const expect = (val) => {
-    
+var expect = function(val) {
     
     const toBe = item => {
         if(val === item) return true;
