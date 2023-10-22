@@ -2,17 +2,20 @@
  * @param {integer} init
  * @return { increment: Function, decrement: Function, reset: Function }
  */
-const createCounter = (init) => {
+var createCounter = function(init) {
     
     let count = init;
     
+    const increment = () => {
+        return ++count;
+    }
     
-    const increment = () => ++count;
-    const decrement = () => --count;
+    const decrement = () => {
+        return --count;
+    }
     
     const reset = () => {
         count = init;
-        
         return count;
     }
     
