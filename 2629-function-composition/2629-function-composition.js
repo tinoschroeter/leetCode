@@ -6,11 +6,9 @@ var compose = function(functions) {
     
 	return function(x) {
         
-        for(let fn of functions.reverse()) {
-            x = fn(x);
-        }
+
+        return functions.reduceRight((akk, fn) => fn(akk), x);
         
-        return x;
     }
 };
 
