@@ -4,22 +4,17 @@
  */
 var createCounter = function(init) {
     
-    let count = init;
+    let counter = init;
     
-    const increment = () => {
-        return ++count;
-    }
-    
-    const decrement = () => {
-        return --count;
-    }
+    const increment = () => ++counter;
+    const decrement = () => --counter;
     
     const reset = () => {
-        count = init;
-        return count;
+        counter = init;
+        return counter;
     }
     
-    return {increment, decrement, reset};
+    return { increment, decrement, reset};
 };
 
 /**
