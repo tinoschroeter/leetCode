@@ -4,7 +4,7 @@
 
 Collection of LeetCode questions to ace the coding interview! - Created using [LeetHub](https://github.com/QasimWani/LeetHub)
 
-> Questions solved 477 uniq: 205
+> Questions solved 478 uniq: 206
 
 [LeedCode Profile](https://leetcode.com/tinoschroeter/)
 
