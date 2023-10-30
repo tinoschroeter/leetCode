@@ -5,12 +5,12 @@
  * @return {Function}
  */
 var cancellable = function(fn, args, t) {
-   
-    fn(...args)
     
-    const interval = setInterval(() => fn(...args),t);
+    fn(...args);
     
-    const cancelFn = () => clearInterval(interval);
+    const timer = setInterval(() => fn(...args), t);
+    
+    const cancelFn = () => clearInterval(timer);
     
     return cancelFn;
 };
