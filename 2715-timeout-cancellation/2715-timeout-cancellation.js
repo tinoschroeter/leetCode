@@ -8,9 +8,7 @@ var cancellable = function(fn, args, t) {
     
     const timer = setTimeout(() => fn(...args), t);
     
-    const cancelT = () => {
-        clearTimeout(timer) 
-    }
+    const cancelT = () => clearTimeout(timer)
     
     return cancelT;
 };
