@@ -11,8 +11,7 @@ var once = function(fn) {
         if(call) return undefined;
         
         call = true;
-        
-        return fn(...args);
+        return fn(...args)
     }
 };
 
