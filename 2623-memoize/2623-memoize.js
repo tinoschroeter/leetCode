@@ -4,24 +4,18 @@
  */
 function memoize(fn) {
     
-    
     const cache = new Map();
     
     return function(...args) {
     
-        const key = args.toString();
+        const key = JSON.stringify(args);
         
-        if(cache.has(key)) {
-            const result = cache.get(key);
-            
-            return result;
-        } else {
-            
-            const result = fn(...args);
-            cache.set(key, result);
-            
-            return result;
-        }
+        if(cache.has(key)) return cache.get(key);
+        
+        const result = fn(...args);
+        cache.set(key, result);
+        
+        return result;
     }
 }
 
