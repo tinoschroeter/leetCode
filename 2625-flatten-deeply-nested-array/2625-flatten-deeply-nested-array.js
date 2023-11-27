@@ -5,21 +5,20 @@
  */
 var flat = function (arr, n) {
     
-    const res = []
+    const res = [];
     
-    const helper = (array, depth) => {
+    const helper = (arr, count) => {
         
-        for(let val of array) {
-            
-            if(Array.isArray(val) && depth < n) {
-                helper(val, depth +1)
+        for(let val of arr) {
+            if(Array.isArray(val) && count < n) {
+                helper(val, count +1)
             } else {
-                res.push(val)
+                res.push(val);
             }
         }
         
         return res
     }
     
-    return helper(arr, 0);
+    return helper(arr, 0); 
 };
