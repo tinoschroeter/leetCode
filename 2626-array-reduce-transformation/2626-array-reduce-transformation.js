@@ -7,5 +7,11 @@
 var reduce = function(nums, fn, init) {
     
     
-    return nums.reduce(fn, init);
+    let res = init;
+    
+    for(let val of nums) {
+        res = fn(res, val);
+    }
+    
+    return res;
 };
