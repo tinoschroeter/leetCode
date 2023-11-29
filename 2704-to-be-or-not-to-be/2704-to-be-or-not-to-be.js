@@ -5,15 +5,19 @@
 var expect = function(val) {
     
     const toBe = val2 => {
-        if(val === val2) return true
-        
-        throw new Error("Not Equal");
+        if(val === val2) {
+            return true
+        } else {
+            throw new Error("Not Equal");
+        }
     }
     
     const notToBe = val2 => {
-        if(val !== val2) return true;
-        
-        throw new Error("Equal")
+        if(val !== val2) { 
+            return true
+        } else {
+            throw new Error("Equal");
+        }
     }
     
     return { toBe, notToBe };
