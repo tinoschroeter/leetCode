@@ -4,22 +4,19 @@
  * @return {Array}
  */
 var flat = function (arr, n) {
+       const res = [];
     
-    const res = [];
-    
-    const helper = (arr, count) => {
+    const helper = (a, count) => {
         
-        for(let val of arr) {
-            
+        for(let val of a) {
             if(Array.isArray(val) && count < n) {
-                helper(val, count + 1)
+                helper(val, count + 1);
             } else {
                 res.push(val)
             }
         }
-        
-        return res
     }
     
-    return helper(arr, 0);
+    helper(arr, 0);
+    return res; 
 };
