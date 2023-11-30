@@ -4,13 +4,14 @@
  */
 var once = function(fn) {
     
-    let run = false;
+    let call = false;
+    
     
 	return function(...args){
     
-        if(run) return undefined
+        if(call) return undefined;
         
-        run = true
+        call = true;
         
         return fn(...args);
     }
