@@ -5,10 +5,8 @@
 var compose = function(functions) {
     
 	return function(x) {
-        
-
-        return functions.reduceRight((akk, fn) => fn(akk), x);
-        
+     
+        return functions.reduceRight((akk, fn) => fn(akk),x);
     }
 };
 
