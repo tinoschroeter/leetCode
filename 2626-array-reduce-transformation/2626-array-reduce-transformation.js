@@ -6,12 +6,6 @@
  */
 var reduce = function(nums, fn, init) {
     
-    let result = init;
     
-    for(let val of nums) {
-        result = fn(result, val);
-    }
-    
-    
-    return result;
+    return nums.reduce(fn, init);
 };
