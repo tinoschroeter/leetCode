@@ -6,11 +6,11 @@ var once = function(fn) {
     
     let run = false;
     
-	return function(...args){
+    return function(...args){
     
-        if(run) return undefined
+        if(run) return undefined;
         
-        run = true
+        run = true;
         return fn(...args);
     }
 };
