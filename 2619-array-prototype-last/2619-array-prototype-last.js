@@ -2,10 +2,10 @@
  * @return {null|boolean|number|string|Array|Object}
  */
 Array.prototype.last = function() {
+    
     const len = this.length -1;
     
-    
-    if(len < 0) return -1;
+    if(len < 0) return len;
     return this[len];
 };
 
