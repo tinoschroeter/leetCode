@@ -8,9 +8,9 @@ var debounce = function(fn, t) {
     let id;
     
     return function(...args) {
-        
         if(id) clearTimeout(id);
-        id = setTimeout(() => fn(...args), t);
+        
+        id = setTimeout(() => fn(...args), t)
     }
 };
 
