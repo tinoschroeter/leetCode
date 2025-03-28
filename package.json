@@ -21,6 +21,6 @@
   "dependencies": {
     "chalk": "2.4",
     "git-parse": "^2.1.0",
-    "puppeteer": "^22.11.2"
+    "puppeteer": "^22.15.0"
   }
 }
